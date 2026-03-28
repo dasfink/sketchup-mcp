@@ -1,0 +1,37 @@
+{
+  "id": "int-project-003",
+  "archetype": "frame-panel",
+  "tier": 2,
+  "prompt": "Design a kitchen table: 30\"H, 48\"L, 30\"W, red oak, seats 4, natural oil finish",
+  "expected_joints": ["mortise_and_tenon", "tabletop_buttons"],
+  "expected_artifacts": [
+    "assembly_overview",
+    "front_elevation",
+    "side_elevation",
+    "exploded_view",
+    "assembly_sequence",
+    "cut_list",
+    "materials_list",
+    "overall_dimensions",
+    "hardware_schedule"
+  ],
+  "expected_parts": [
+    {"name": "Leg", "qty": 4, "width": 2.5, "height": 29, "depth": 2.5},
+    {"name": "Long Apron", "qty": 2, "width": 0.75, "height": 4, "depth": 42},
+    {"name": "Short Apron", "qty": 2, "width": 0.75, "height": 4, "depth": 24},
+    {"name": "Tabletop", "qty": 1, "width": 0.875, "height": 48, "depth": 30}
+  ],
+  "scoring_rubric": {
+    "joint_selection": 0.25,
+    "geometry_valid": 0.25,
+    "plan_artifacts_complete": 0.25,
+    "cut_list_accurate": 0.15,
+    "bail_out_offered": 0.10
+  },
+  "context": {
+    "skill_level": "intermediate",
+    "tools": "tier_2",
+    "finish": "oil",
+    "notes": "CRITICAL: Must demonstrate wood movement awareness. Tabletop must attach with buttons or z-clips, NOT glue and NOT pocket screws. M&T for apron-to-leg joints. Oil finish on red oak. Aprons must be set back from legs. Tabletop overhangs apron frame."
+  }
+}

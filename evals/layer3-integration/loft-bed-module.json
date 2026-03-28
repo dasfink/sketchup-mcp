@@ -1,0 +1,42 @@
+{
+  "id": "int-project-006",
+  "archetype": "modular",
+  "tier": 3,
+  "prompt": "Design a storage stair module for a loft bed: 3 stairs, 16\" step height, 12\" step depth, 36\" wide, pine and plywood, knockdown connection to bed frame",
+  "expected_joints": ["dado", "pocket_screw", "bolt_barrel_nut"],
+  "expected_artifacts": [
+    "assembly_overview",
+    "front_elevation",
+    "side_elevation",
+    "top_view",
+    "exploded_view",
+    "assembly_sequence",
+    "cut_list",
+    "materials_list",
+    "overall_dimensions",
+    "hardware_schedule",
+    "module_breakdown"
+  ],
+  "expected_parts": [
+    {"name": "Left Outer Panel", "qty": 1, "width": 0.75, "height": 48, "depth": 36},
+    {"name": "Right Outer Panel", "qty": 1, "width": 0.75, "height": 48, "depth": 36},
+    {"name": "Step Tread", "qty": 3, "width": 0.75, "height": 36, "depth": 12},
+    {"name": "Step Riser", "qty": 3, "width": 0.75, "height": 16, "depth": 36},
+    {"name": "Vertical Divider", "qty": 2, "width": 0.75, "height": 15.25, "depth": 11.25},
+    {"name": "Back Panel", "qty": 1, "width": 0.25, "height": 48, "depth": 36},
+    {"name": "Storage Shelf", "qty": 3, "width": 0.75, "height": 34.5, "depth": 11.25}
+  ],
+  "scoring_rubric": {
+    "joint_selection": 0.25,
+    "geometry_valid": 0.25,
+    "plan_artifacts_complete": 0.25,
+    "cut_list_accurate": 0.15,
+    "bail_out_offered": 0.10
+  },
+  "context": {
+    "skill_level": "advanced",
+    "tools": "tier_2",
+    "finish": "paint",
+    "notes": "Tier 3 full integration test. Module must connect to bed frame via bolt+barrel nut knockdown hardware. Internal structure uses dadoes for dividers and shelves. Pocket screws for within-module assembly where dadoes are impractical. Each stair step forms a cubby with storage below. Hardware schedule must specify bolt sizes, barrel nut quantities, and locations. Module breakdown must describe how this connects to the larger loft bed system."
+  }
+}

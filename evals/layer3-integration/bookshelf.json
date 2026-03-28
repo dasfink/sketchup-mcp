@@ -1,0 +1,38 @@
+{
+  "id": "int-project-002",
+  "archetype": "flat-pack",
+  "tier": 2,
+  "prompt": "Design a bookshelf: 36\"W, 12\"D, 48\"H, pine, 3 fixed shelves, painted white",
+  "expected_joints": ["dado", "rabbet"],
+  "expected_artifacts": [
+    "assembly_overview",
+    "front_elevation",
+    "side_elevation",
+    "exploded_view",
+    "assembly_sequence",
+    "cut_list",
+    "materials_list",
+    "overall_dimensions"
+  ],
+  "expected_parts": [
+    {"name": "Left Side", "qty": 1, "width": 0.75, "height": 48, "depth": 11.25},
+    {"name": "Right Side", "qty": 1, "width": 0.75, "height": 48, "depth": 11.25},
+    {"name": "Top", "qty": 1, "width": 0.75, "height": 34.5, "depth": 11.25},
+    {"name": "Bottom", "qty": 1, "width": 0.75, "height": 34.5, "depth": 11.25},
+    {"name": "Shelf", "qty": 3, "width": 0.75, "height": 34.5, "depth": 10.5},
+    {"name": "Back", "qty": 1, "width": 0.25, "height": 47.25, "depth": 35.25}
+  ],
+  "scoring_rubric": {
+    "joint_selection": 0.25,
+    "geometry_valid": 0.25,
+    "plan_artifacts_complete": 0.25,
+    "cut_list_accurate": 0.15,
+    "bail_out_offered": 0.10
+  },
+  "context": {
+    "skill_level": "beginner",
+    "tools": "tier_2",
+    "finish": "paint",
+    "notes": "User has router available (tier_2 tools). Dado joints for shelves, rabbet for back panel. Shelves should be inset in dadoes. Back sits in rabbet. Paint grade allows pine."
+  }
+}

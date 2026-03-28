@@ -1,0 +1,38 @@
+{
+  "id": "int-project-004",
+  "archetype": "frame-panel",
+  "tier": 2,
+  "prompt": "Build a knockdown workbench: 34\"H, 60\"L, 24\"D, construction lumber, needs to disassemble for moving",
+  "expected_joints": ["half_lap", "bolt_barrel_nut"],
+  "expected_artifacts": [
+    "assembly_overview",
+    "front_elevation",
+    "side_elevation",
+    "exploded_view",
+    "assembly_sequence",
+    "cut_list",
+    "materials_list",
+    "overall_dimensions",
+    "hardware_schedule"
+  ],
+  "expected_parts": [
+    {"name": "Leg", "qty": 4, "width": 1.5, "height": 33.25, "depth": 3.5},
+    {"name": "Long Stretcher", "qty": 2, "width": 1.5, "height": 3.5, "depth": 54},
+    {"name": "Short Stretcher", "qty": 2, "width": 1.5, "height": 3.5, "depth": 18},
+    {"name": "Top Slab", "qty": 1, "width": 1.5, "height": 60, "depth": 24},
+    {"name": "Bottom Shelf", "qty": 1, "width": 0.75, "height": 57, "depth": 21}
+  ],
+  "scoring_rubric": {
+    "joint_selection": 0.25,
+    "geometry_valid": 0.25,
+    "plan_artifacts_complete": 0.25,
+    "cut_list_accurate": 0.15,
+    "bail_out_offered": 0.10
+  },
+  "context": {
+    "skill_level": "intermediate",
+    "tools": "tier_2",
+    "finish": "none",
+    "notes": "Knockdown design is critical requirement. Must use bolt+barrel nut or bed bolts for disassembly. Half-lap joints for stretcher-to-leg connections. Construction lumber (2x4, 2x6) dimensions are nominal -- actual dimensions must be correct (1.5x3.5, 1.5x5.5). Hardware schedule must list bolt sizes and quantities."
+  }
+}

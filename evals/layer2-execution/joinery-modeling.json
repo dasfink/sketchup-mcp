@@ -1,0 +1,622 @@
+[
+  {
+    "id": "joinery-001",
+    "category": "joinery-modeling",
+    "description": "Cut a standard 3/4-inch dado into 3/4-inch stock (shelf dado in a bookcase side)",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Side Panel",
+          "position": [0, 0, 0],
+          "dimensions": [0.75, 11.25, 30],
+          "material": "Pine",
+          "tag": "Carcase"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "safe_cut_dado",
+      "params": {
+        "component_name": "Side Panel",
+        "face": "y+",
+        "z_start": 12,
+        "z_end": 12.75,
+        "depth": 0.375
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_bounds",
+        "params": {
+          "expected": "{\"Side Panel\": {\"x\": [0, 0.75], \"y\": [0, 11.25], \"z\": [0, 30]}}"
+        },
+        "note": "Overall bounding box unchanged — dado is an interior cut"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "joinery-002",
+    "category": "joinery-modeling",
+    "description": "Cut an edge rabbet for a 1/4-inch back panel (step joint along back edge)",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Carcase Side",
+          "position": [0, 0, 0],
+          "dimensions": [0.75, 11.25, 36],
+          "material": "Pine",
+          "tag": "Carcase"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "safe_cut_dado",
+      "params": {
+        "component_name": "Carcase Side",
+        "face": "y-",
+        "z_start": 0,
+        "z_end": 36,
+        "depth": 0.25
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_bounds",
+        "params": {
+          "expected": "{\"Carcase Side\": {\"x\": [0, 0.75], \"y\": [0, 11.25], \"z\": [0, 36]}}"
+        },
+        "note": "Bounding box unchanged — rabbet is an interior cut on back face"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "joinery-003",
+    "category": "joinery-modeling",
+    "description": "Cut a through-groove for a drawer bottom (1/4-inch plywood in 1/2-inch drawer side)",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Drawer Side",
+          "position": [0, 0, 0],
+          "dimensions": [0.5, 18, 4],
+          "material": "Maple",
+          "tag": "Drawer"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "safe_cut_dado",
+      "params": {
+        "component_name": "Drawer Side",
+        "face": "x+",
+        "z_start": 0.25,
+        "z_end": 0.5,
+        "depth": 0.25
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_bounds",
+        "params": {
+          "expected": "{\"Drawer Side\": {\"x\": [0, 0.5], \"y\": [0, 18], \"z\": [0, 4]}}"
+        },
+        "note": "Bounding box unchanged — groove is interior"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "joinery-004",
+    "category": "joinery-modeling",
+    "description": "Boolean subtract a mortise pocket (1/4 x 1 x 3 inches) into a table leg",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Table Leg",
+          "position": [0, 0, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "boolean_subtract",
+      "params": {
+        "target": "Table Leg",
+        "cutter_type": "box",
+        "position": [0.625, -0.01, 25],
+        "dimensions": [0.25, 1.0, 3.0]
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_bounds",
+        "params": {
+          "expected": "{\"Table Leg\": {\"x\": [0, 1.5], \"y\": [0, 1.5], \"z\": [0, 29]}}"
+        },
+        "note": "Bounding box unchanged — mortise is an interior pocket"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "joinery-005",
+    "category": "joinery-modeling",
+    "description": "Create a mortise-and-tenon joint pairing an apron to a table leg",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Front Leg",
+          "position": [0, 0, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Side Apron",
+          "position": [1.5, 0.25, 25],
+          "dimensions": [20, 1.0, 3.5],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_mortise_tenon",
+      "params": {
+        "mortise_id": "Front Leg",
+        "tenon_id": "Side Apron",
+        "width": 0.25,
+        "height": 3.0,
+        "depth": 1.0,
+        "offset_x": 0,
+        "offset_y": 0,
+        "offset_z": 0
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.entities.grep(Sketchup::Group).count + Sketchup.active_model.entities.grep(Sketchup::ComponentInstance).count"
+        },
+        "expected": 2,
+        "note": "Still exactly 2 components after joint creation"
+      }
+    ]
+  },
+  {
+    "id": "joinery-006",
+    "category": "joinery-modeling",
+    "description": "Create a finger joint (box joint) between two boards at a corner",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Box Side A",
+          "position": [0, 0, 0],
+          "dimensions": [12, 0.5, 6],
+          "material": "Maple",
+          "tag": "Box"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Box Side B",
+          "position": [0, 0.5, 0],
+          "dimensions": [0.5, 8, 6],
+          "material": "Maple",
+          "tag": "Box"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_finger_joint",
+      "params": {
+        "board1_id": "Box Side A",
+        "board2_id": "Box Side B",
+        "num_fingers": 5,
+        "width": 0.5,
+        "height": 6,
+        "depth": 0.5
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.entities.grep(Sketchup::Group).count + Sketchup.active_model.entities.grep(Sketchup::ComponentInstance).count"
+        },
+        "expected": 2,
+        "note": "Still 2 components — no orphan cutters left behind"
+      }
+    ]
+  },
+  {
+    "id": "joinery-007",
+    "category": "joinery-modeling",
+    "description": "Create a dovetail joint between a drawer front and drawer side",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Drawer Front",
+          "position": [0, 0, 0],
+          "dimensions": [0.75, 14, 4],
+          "material": "Cherry",
+          "tag": "Drawer"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Drawer Side DT",
+          "position": [0.75, 0, 0],
+          "dimensions": [18, 0.5, 4],
+          "material": "Maple",
+          "tag": "Drawer"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_dovetail",
+      "params": {
+        "tail_id": "Drawer Side DT",
+        "pin_id": "Drawer Front",
+        "num_tails": 3,
+        "width": 0.5,
+        "height": 4,
+        "depth": 0.75,
+        "angle": 14
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.entities.grep(Sketchup::Group).count + Sketchup.active_model.entities.grep(Sketchup::ComponentInstance).count"
+        },
+        "expected": 2,
+        "note": "Two components remain after dovetail creation"
+      }
+    ]
+  },
+  {
+    "id": "joinery-008",
+    "category": "joinery-modeling",
+    "description": "Drill a 5/16-inch bolt hole through a 2x4 stud (face-to-face)",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Stud 2x4",
+          "position": [0, 0, 0],
+          "dimensions": [1.5, 3.5, 96],
+          "material": "Pine",
+          "tag": "Frame"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "safe_drill_hole",
+      "params": {
+        "component_name": "Stud 2x4",
+        "center": [0.75, 0, 48],
+        "normal": [0, 1, 0],
+        "radius": 0.15625,
+        "depth": 3.5
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_bounds",
+        "params": {
+          "expected": "{\"Stud 2x4\": {\"x\": [0, 1.5], \"y\": [0, 3.5], \"z\": [0, 96]}}"
+        },
+        "note": "Bounding box unchanged — through-hole is interior"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "joinery-009",
+    "category": "joinery-modeling",
+    "description": "Drill a barrel nut cross-bore (10mm perpendicular to a bolt hole in a rail end)",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Bed Rail",
+          "position": [0, 0, 0],
+          "dimensions": [76, 1.5, 7.25],
+          "material": "Pine",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "safe_drill_hole",
+        "params": {
+          "component_name": "Bed Rail",
+          "center": [2, 0.75, 3.625],
+          "normal": [1, 0, 0],
+          "radius": 0.15625,
+          "depth": 3
+        }
+      }
+    ],
+    "operation": {
+      "tool": "safe_drill_hole",
+      "params": {
+        "component_name": "Bed Rail",
+        "center": [2, 0.75, 0],
+        "normal": [0, 0, 1],
+        "radius": 0.197,
+        "depth": 7.25
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_bounds",
+        "params": {
+          "expected": "{\"Bed Rail\": {\"x\": [0, 76], \"y\": [0, 1.5], \"z\": [0, 7.25]}}"
+        },
+        "note": "Bounding box unchanged despite two intersecting holes"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "joinery-010",
+    "category": "joinery-modeling",
+    "description": "WW.dado via eval_ruby — cut a 3/4-inch dado into a shelf side using the WW helper library",
+    "setup": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.reset!; WW.board('WW Side Panel', '1x12', 30, material: 'Pine')"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "eval_ruby",
+      "params": {
+        "code": "WW.dado('WW Side Panel', face: :top, at: 12, width: 0.75, depth: 0.375)"
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "b = WW.list_boards.find { |r| r[:name] == 'WW Side Panel' }; b && b[:valid]"
+        },
+        "expected": true,
+        "note": "Board is still tracked and valid after dado cut"
+      }
+    ]
+  },
+  {
+    "id": "joinery-011",
+    "category": "joinery-modeling",
+    "description": "WW.rabbet via eval_ruby — cut a back-panel rabbet using WW helper library",
+    "setup": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.reset!; WW.board('WW Cabinet Side', '1x12', 36, material: 'Pine')"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "eval_ruby",
+      "params": {
+        "code": "WW.rabbet('WW Cabinet Side', edge: :back_inner, width: 0.375, depth: 0.25)"
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "b = WW.list_boards.find { |r| r[:name] == 'WW Cabinet Side' }; b && b[:valid]"
+        },
+        "expected": true,
+        "note": "Board remains tracked and valid after rabbet"
+      }
+    ]
+  },
+  {
+    "id": "joinery-012",
+    "category": "joinery-modeling",
+    "description": "WW.mortise via eval_ruby — cut a mortise pocket in a leg for an apron tenon",
+    "setup": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.reset!; WW.board('WW Leg', [1.5, 1.5, 29], material: 'White Oak')"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "eval_ruby",
+      "params": {
+        "code": "WW.mortise('WW Leg', face: :front, at: [0.5, 25], size: [0.5, 3.0], depth: 1.0)"
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "b = WW.list_boards.find { |r| r[:name] == 'WW Leg' }; b && b[:valid]"
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "joinery-013",
+    "category": "joinery-modeling",
+    "description": "WW.bolt_hole via eval_ruby — drill a 5/16-inch bolt hole through a bed post face",
+    "setup": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.reset!; WW.board('WW Post', '4x4', 72, material: 'Pine')"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "eval_ruby",
+      "params": {
+        "code": "WW.bolt_hole('WW Post', face: :front, at: [1.75, 66], hole: 0.3125)"
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "b = WW.list_boards.find { |r| r[:name] == 'WW Post' }; b && b[:valid]"
+        },
+        "expected": true
+      }
+    ]
+  },
+  {
+    "id": "joinery-014",
+    "category": "joinery-modeling",
+    "description": "Boolean subtract a cylinder (dowel hole) from a board face",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Shelf Board",
+          "position": [0, 0, 0],
+          "dimensions": [24, 11.25, 0.75],
+          "material": "Pine",
+          "tag": "Carcase"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "boolean_subtract",
+      "params": {
+        "target": "Shelf Board",
+        "cutter_type": "cylinder",
+        "position": [2, 1, 0],
+        "dimensions": [0.75, 0.1875, 0],
+        "axis": [0, 0, 1]
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_bounds",
+        "params": {
+          "expected": "{\"Shelf Board\": {\"x\": [0, 24], \"y\": [0, 11.25], \"z\": [0, 0.75]}}"
+        },
+        "note": "Bounding box unchanged after dowel hole"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.check_solids.all? { |r| r[:solid] }"
+        },
+        "expected": true
+      }
+    ]
+  }
+]

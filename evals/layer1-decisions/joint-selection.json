@@ -1,0 +1,355 @@
+[
+  {
+    "id": "joint-001",
+    "category": "joint-selection",
+    "prompt": "I'm building a bookcase and need to attach fixed shelves into the side panels. The sides are 3/4\" plywood. What joint should I use?",
+    "expected": {
+      "joint_type": "dado",
+      "dimensions": {"width": "23/32\"", "depth": "3/8\""},
+      "notes": "Dado is the defining joint for shelf-into-side connections. Width must match actual plywood thickness (23/32\" for standard 3/4\" plywood), not nominal. Depth should be 1/4\" to 3/8\" in 3/4\" stock."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "stain"}
+  },
+  {
+    "id": "joint-002",
+    "category": "joint-selection",
+    "prompt": "I'm building a dining table and need to connect the aprons to the legs. The legs are 1-1/2\" square and the aprons are 3/4\" thick by 4\" wide. What joint should I use?",
+    "expected": {
+      "joint_type": "mortise_and_tenon",
+      "dimensions": {"tenon_thickness": "1/2\"", "tenon_width": "3-1/2\"", "tenon_length": "1\""},
+      "notes": "Mortise and tenon is the defining joint for apron-to-leg connections. Tenon thickness should be approximately 1/3 of the mortise board thickness. Tenon length at least 1\" for a 1-1/2\" leg. Shoulders on the tenon bear against the leg to resist racking."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "natural"}
+  },
+  {
+    "id": "joint-003",
+    "category": "joint-selection",
+    "prompt": "I'm building a drawer for my nightstand. The drawer sides are 1/2\" poplar, and the drawer front is 3/4\" maple. What joint should I use at the front corners?",
+    "expected": {
+      "joint_type": "dovetail",
+      "dimensions": {"angle": "14-15 degrees (1:7 or 1:8 for hardwood)"},
+      "notes": "Half-blind dovetails are the classic drawer front-to-side joint. Tails on the side, pins on the front. Half-blind hides the joint on the drawer front face. Use 14-15 degree angle for hardwood."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_3", "finish": "natural"}
+  },
+  {
+    "id": "joint-004",
+    "category": "joint-selection",
+    "prompt": "I'm building a face frame for a kitchen cabinet. The stiles and rails are 1x2 poplar and the cabinet will be painted white. What's the best joint?",
+    "expected": {
+      "joint_type": "pocket_screw",
+      "dimensions": {"screw_length": "1-1/4\"", "thread": "fine (hardwood/poplar)"},
+      "notes": "Pocket screws are ideal for face frames, especially paint-grade. Drill pocket holes in the rails, screw into the stiles. Fill the holes with plugs or filler before painting. Fast and strong enough for face frame duty."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-005",
+    "category": "joint-selection",
+    "prompt": "I'm building a workbench and need to connect the stretchers where they cross in the middle. The stretchers are 2x4 SPF. What joint should I use?",
+    "expected": {
+      "joint_type": "half_lap",
+      "dimensions": {"notch_depth": "3/4\" (half of 1-1/2\")", "notch_width": "3-1/2\" (actual width of 2x4)"},
+      "notes": "Half-lap (cross-lap) is ideal for stretcher intersections. Each board has half its thickness removed so they sit flush. Pin or screw through the joint for added strength. Large face-grain glue area."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "natural"}
+  },
+  {
+    "id": "joint-006",
+    "category": "joint-selection",
+    "prompt": "I want to build a decorative box with visible corner joints. The sides are 1/2\" cherry. What joint would look good and be achievable with a table saw?",
+    "expected": {
+      "joint_type": "finger_joint",
+      "dimensions": {"finger_width": "1/4\" to 3/8\"", "finger_depth": "1/2\" (full stock thickness)"},
+      "notes": "Finger/box joints are decorative, strong, and achievable with a table saw + box-joint jig. Use narrow fingers (1/4\"-3/8\") in hardwood for a refined look. Contrasting woods can make the pattern pop. Nearly as strong as dovetails but much easier to cut."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "natural"}
+  },
+  {
+    "id": "joint-007",
+    "category": "joint-selection",
+    "prompt": "I need to attach a 1/4\" plywood back panel to my bookcase. The case sides are 3/4\" plywood. What joint?",
+    "expected": {
+      "joint_type": "rabbet",
+      "dimensions": {"width": "1/4\"", "depth": "3/8\""},
+      "notes": "Rabbet is the standard joint for back panels. Cut an L-shaped step along the back inner edge of each side. Width matches the back panel thickness (1/4\"). Depth of 3/8\" provides a good lip. The back panel squares the entire carcass — it is structural, not just cosmetic."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "paint"}
+  },
+  {
+    "id": "joint-008",
+    "category": "joint-selection",
+    "prompt": "I want to join aprons to table legs but I don't have a router or table saw. I have a Kreg jig and a drill. The legs are 3-1/2\" square 4x4s and the aprons are 1x6 pine. What joint should I use?",
+    "expected": {
+      "joint_type": "dowel",
+      "dimensions": {"dowel_diameter": "3/8\"", "dowel_length": "1-1/2\" to 2\"", "quantity": "2-3 per joint"},
+      "bail_out": "Pocket screws are the simplest alternative. Drill pocket holes in the apron, screw into the leg. Add a lower stretcher shelf for racking resistance since pocket screws alone are weak against racking.",
+      "notes": "Dowel joint provides about 70% of M&T strength with simpler tooling. A doweling jig and drill are all that's needed (Tier 0). Use 3/8\" dowels, 2-3 per joint, spaced 2-3\" apart. Fluted dowels distribute glue better."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-009",
+    "category": "joint-selection",
+    "prompt": "I'm building the simplest possible shelf from 2x10 boards. I have a drill and some screws. No pocket hole jig, no router, no table saw. What's my best option?",
+    "expected": {
+      "joint_type": "butt_screw",
+      "dimensions": {"screw_length": "2-1/2\" to 3\""},
+      "bail_out": "A pocket hole jig ($50) would significantly improve joint quality. Alternatively, use shelf cleats — screw a 1x2 strip to the inside of each side panel and rest the shelf on the cleats.",
+      "notes": "Butt joint with screws is the simplest possible joint. Pre-drill to prevent splitting. Drive screws through the side panel into the end grain of the shelf. Add a back panel (even 1/4\" hardboard nailed on) to prevent racking. Paint hides the screw heads."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-010",
+    "category": "joint-selection",
+    "prompt": "I'm building a modular loft bed that needs to come apart for moving. How should I connect the side rails to the corner posts? The posts are 4x4 and the rails are 2x8.",
+    "expected": {
+      "joint_type": "bolt_barrel_nut",
+      "dimensions": {"bolt": "3/8\" hex bolt, 4\" long", "barrel_nut": "3/8\""},
+      "notes": "Bolt and barrel nut is the defining joint for knockdown/modular furniture. Drill a through-hole in the post for the bolt, and a cross-hole in the rail for the barrel nut. Washers on every bolt. Can be disassembled and reassembled repeatedly. Use a drilling template shared across modules to ensure alignment."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "paint"}
+  },
+  {
+    "id": "joint-011",
+    "category": "joint-selection",
+    "prompt": "I need to attach a fixed shelf into an upright for a bookcase. I only have a circular saw, drill, and a Kreg pocket hole jig. What joint should I use?",
+    "expected": {
+      "joint_type": "pocket_screw",
+      "dimensions": {"screw_length": "1-1/4\" for 3/4\" stock"},
+      "bail_out": "Shelf pins are another option — drill two columns of 1/4\" holes in each side panel and use metal shelf pins. More flexible since shelves become adjustable.",
+      "notes": "At Tier 0 with a pocket hole jig, pocket screws are the best option for shelf-to-upright. Drill pockets in the underside of the shelf, screw into the side panel. The joint is hidden underneath. Add a back panel to prevent racking."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-012",
+    "category": "joint-selection",
+    "prompt": "Same bookcase shelf-into-upright connection, but now I have a router with a straight bit and edge guide. Should I still use pocket screws?",
+    "expected": {
+      "joint_type": "dado",
+      "dimensions": {"width": "match actual shelf thickness", "depth": "1/4\" to 3/8\""},
+      "notes": "With a router (Tier 1), dados are now available and are a significant upgrade over pocket screws for shelves. The dado provides a full-width bearing surface, holds the shelf square, and distributes load evenly. Use the router with a straight bit and edge guide to cut the dado. Measure actual shelf thickness with calipers before cutting."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "stain"}
+  },
+  {
+    "id": "joint-013",
+    "category": "joint-selection",
+    "prompt": "Same bookcase shelf-into-upright, but I now have a table saw with a dado stack. Is there any difference from using a router?",
+    "expected": {
+      "joint_type": "dado",
+      "dimensions": {"width": "match actual shelf thickness", "depth": "1/4\" to 3/8\""},
+      "notes": "At Tier 2, the table saw with a dado stack cuts dados faster and more consistently than a router, especially for multiple identical shelves. The joint itself is the same — the dado stack simply makes the process more repeatable. Set the dado stack width to match actual plywood thickness, test on scrap first."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "stain"}
+  },
+  {
+    "id": "joint-014",
+    "category": "joint-selection",
+    "prompt": "I need to connect table aprons to legs but I only have Tier 0 tools (drill, circular saw, Kreg jig). No router or table saw. What joint?",
+    "expected": {
+      "joint_type": "pocket_screw",
+      "dimensions": {"screw_length": "2-1/2\" for 1-1/2\" stock or 1-1/4\" for 3/4\" stock"},
+      "bail_out": "Add a lower stretcher shelf between the legs to compensate for the weaker pocket-screw joint. The shelf prevents racking that pocket screws alone cannot resist.",
+      "notes": "At Tier 0, pocket screws substitute for mortise and tenon. Drill pocket holes in the apron, screw into the leg. Use 2 screws per apron end minimum. Must add a lower stretcher or shelf to prevent racking. Suitable for paint-grade only."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-015",
+    "category": "joint-selection",
+    "prompt": "Same table apron-to-leg, but now I have Tier 2 tools (router + table saw). Should I still use pocket screws?",
+    "expected": {
+      "joint_type": "mortise_and_tenon",
+      "dimensions": {"tenon_thickness": "1/3 of leg width", "tenon_length": "2/3 to 3/4 of leg width"},
+      "notes": "At Tier 2, mortise and tenon becomes achievable: router cuts the mortise, table saw cuts the tenon cheeks. M&T is dramatically stronger than pocket screws for this connection — it is the gold standard for anti-racking in frames. Pocket screws are no longer the recommended choice when M&T is available."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "stain"}
+  },
+  {
+    "id": "joint-016",
+    "category": "joint-selection",
+    "prompt": "I'm building a pine jewelry box. The sides are 1/2\" Eastern white pine. What dovetail angle should I use?",
+    "expected": {
+      "joint_type": "dovetail",
+      "dimensions": {"angle": "1:6 ratio (~9.5 degrees) for softwood"},
+      "notes": "Softwood requires a steeper dovetail angle (1:6, approximately 9.5 degrees) compared to hardwood. The wider angle gives the tails more material to resist forces in the softer wood. Pine is very soft (Janka 380) so the wider angle is important."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_3", "finish": "natural"}
+  },
+  {
+    "id": "joint-017",
+    "category": "joint-selection",
+    "prompt": "I'm building a walnut jewelry box. The sides are 1/2\" black walnut. What dovetail angle should I use?",
+    "expected": {
+      "joint_type": "dovetail",
+      "dimensions": {"angle": "1:8 ratio (~7 degrees) for hardwood"},
+      "notes": "Hardwood uses a shallower dovetail angle (1:8, approximately 7 degrees). The narrower tails look more refined and the harder wood (walnut Janka 1,010) is strong enough to hold them. This is the standard angle for fine furniture dovetails in hardwood."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_3", "finish": "natural"}
+  },
+  {
+    "id": "joint-018",
+    "category": "joint-selection",
+    "prompt": "I'm joining pine boards for a rustic box. Should I use the same dovetail angle as I would for oak?",
+    "expected": {
+      "joint_type": "dovetail",
+      "dimensions": {"softwood_angle": "1:6 (~9.5 degrees)", "hardwood_angle": "1:8 (~7 degrees)"},
+      "notes": "No. Softwood (pine) needs a steeper angle (1:6) than hardwood (oak, 1:8). The softer fibers of pine need the wider tail geometry to maintain strength. Using the hardwood angle (1:8) in pine risks the tails breaking under stress."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_3", "finish": "stain"}
+  },
+  {
+    "id": "joint-019",
+    "category": "joint-selection",
+    "prompt": "I'm making dado joints in pine shelving. The sides are 3/4\" pine. How deep should I cut the dados?",
+    "expected": {
+      "joint_type": "dado",
+      "dimensions": {"depth": "1/4\" (1/3 rule for softwood)"},
+      "notes": "In softwood, use the 1/3 depth rule: dado depth = 1/3 of the board thickness. For 3/4\" pine, that's 1/4\" deep. Pine is soft enough that deeper dados weaken the side panel too much. A snug fit matters in pine — too loose and the shelf wobbles."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "paint"}
+  },
+  {
+    "id": "joint-020",
+    "category": "joint-selection",
+    "prompt": "Same dado joint but in 3/4\" hard maple sides. Can I go deeper than in pine?",
+    "expected": {
+      "joint_type": "dado",
+      "dimensions": {"depth": "3/8\" (up to 1/2 depth in hardwood)"},
+      "notes": "In hardwood, you can go to 1/2 depth. For 3/4\" hard maple, 3/8\" is the standard depth. Hardwood holds the channel walls well. Test-fit is critical because hardwood does not compress like pine — the shelf must slide in without forcing."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "natural"}
+  },
+  {
+    "id": "joint-021",
+    "category": "joint-selection",
+    "prompt": "I want to use pocket screws to attach my solid wood tabletop to the aprons. The top is 3/4\" red oak and 24\" wide. Is this a good idea?",
+    "expected": {
+      "joint_type": "ANTI-PATTERN",
+      "notes": "MUST FAIL. Pocket screws driven across grain to attach a wide solid-wood tabletop will cause the top to crack. A 24\" wide oak top can move 1/8\" to 1/4\" seasonally across its width. Pocket screws lock the top rigidly to the aprons, preventing this movement. Use tabletop buttons, Z-clips, or elongated pocket holes instead — these allow the top to expand and contract while staying attached."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "stain"}
+  },
+  {
+    "id": "joint-022",
+    "category": "joint-selection",
+    "prompt": "I'm building a bookcase from plywood and I plan to just glue the shelves into dados. No back panel, no screws, no pins. Is the dado-and-glue alone enough?",
+    "expected": {
+      "joint_type": "ANTI-PATTERN",
+      "notes": "MUST FAIL. A dado with glue but no back panel creates a carcass that will rack (lean sideways) under any lateral force. The dado has only moderate racking resistance. A back panel is structural — it holds the box square. Without it, the bookcase will eventually sway and collapse. Always include a back panel (1/4\" plywood in a rabbet) or add diagonal bracing."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_1", "finish": "paint"}
+  },
+  {
+    "id": "joint-023",
+    "category": "joint-selection",
+    "prompt": "I'm building an oil-finished walnut bookshelf and I want to use face screws to attach the shelves to the side panels. I'll just countersink and plug the screw holes. Is this the right approach?",
+    "expected": {
+      "joint_type": "ANTI-PATTERN",
+      "notes": "MUST FAIL. Face screws on an oil-finished walnut piece are ugly even when plugged — the plugs never match perfectly under oil finish. Wood filler does not take stain or oil evenly. For stain or oil-grade work, use pocket screws on hidden faces, dados, or decorative through-joints. Face screwing is only acceptable on paint-grade work where filler can be hidden."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "natural"}
+  },
+  {
+    "id": "joint-024",
+    "category": "joint-selection",
+    "prompt": "I want to attach pocket screws from the end grain of one board into the end grain of another board. Is this okay?",
+    "expected": {
+      "joint_type": "ANTI-PATTERN",
+      "notes": "MUST FAIL. End-grain to end-grain has no holding power for screws. Pocket screws are driven at an angle into face grain of the mating board — that's where they get their grip. Screwing into end grain means the screw threads have nothing to bite into. The connection will pull apart under minimal load."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-025",
+    "category": "joint-selection",
+    "prompt": "I'm building an outdoor patio table. Can I use regular wood glue with mortise and tenon joints for the frame? It will be on a covered porch.",
+    "expected": {
+      "joint_type": "ANTI-PATTERN",
+      "notes": "MUST FAIL. Even on a covered porch, humidity cycling will weaken standard wood glue (PVA) joints over time. Outdoor furniture should use mechanical fasteners (bolts, structural screws, carriage bolts) as the primary connection. If using M&T outdoors, reinforce with drawbore pins or through-bolts. Use Titebond III (water-resistant) or polyurethane glue as a supplement, not as the sole fastener."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "outdoor"}
+  },
+  {
+    "id": "joint-026",
+    "category": "joint-selection",
+    "prompt": "I'm a beginner building my first bookcase from pine. I want to use dados for the shelves. I have a router but I've never used it. What should I do?",
+    "expected": {
+      "joint_type": "dado",
+      "dimensions": {"width": "match shelf thickness", "depth": "1/4\""},
+      "bail_out": "If the router feels intimidating, use pocket screws from the underside of each shelf into the side panel. Or use shelf cleats — screw a 1x1 strip to the inside of each side panel and rest the shelf on it. Both are valid alternatives that need no router skills.",
+      "notes": "Dados are achievable for a beginner with a router and edge guide. Practice on scrap first. Clamp the edge guide securely. Take multiple shallow passes rather than one deep cut. The dado makes the shelves self-squaring which actually simplifies assembly."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_1", "finish": "paint"}
+  },
+  {
+    "id": "joint-027",
+    "category": "joint-selection",
+    "prompt": "I'm a beginner and I want to build a small table. I have a drill and a Kreg jig. What joint should I use to connect the aprons to the legs?",
+    "expected": {
+      "joint_type": "pocket_screw",
+      "dimensions": {"screw_length": "2-1/2\" for 1-1/2\" legs"},
+      "bail_out": "If the table feels wobbly after assembly, add a lower shelf between the legs using pocket screws. The shelf acts as a stretcher and dramatically improves racking resistance. Corner brackets (metal L-brackets inside the apron-to-leg junction) are another simple reinforcement.",
+      "notes": "Pocket screws are the Tier 0 substitute for M&T in table frames. Drill pocket holes in the apron, screw into the leg. Use at least 2 screws per joint. Always add a lower stretcher or shelf for racking resistance."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-028",
+    "category": "joint-selection",
+    "prompt": "I'm a beginner with only a drill and circular saw. I want to build a box with nice corner joints. What's realistic?",
+    "expected": {
+      "joint_type": "rabbet_pin",
+      "bail_out": "If even a rabbet feels difficult, a simple butt joint reinforced with brads or screws works for a painted box. Glue all faces before nailing. The box will be weaker but functional.",
+      "notes": "A rabbet cut on the table saw or even with a circular saw and fence, reinforced with pin nails or brads, is the most realistic box corner for a beginner at Tier 0. Glue the rabbet and pin it. It's hidden by paint. Finger joints and dovetails require Tier 2-3 tools and skills."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-029",
+    "category": "joint-selection",
+    "prompt": "I'm a beginner who wants to build a workbench. I have a drill, circular saw, and pocket hole jig. What joints should I use for the stretchers?",
+    "expected": {
+      "joint_type": "pocket_screw",
+      "bail_out": "If you don't have a pocket hole jig, use butt joints with 3\" construction screws. Pre-drill everything. A workbench doesn't need to be pretty — it needs to be sturdy. Add diagonal bracing if it feels wobbly.",
+      "notes": "At Tier 0, pocket screws are the best option for stretcher connections. Drive pockets into the stretcher ends and screw into the legs. Use 2-1/2\" screws for 1-1/2\" stock. A workbench is a utility project — paint-grade joints are perfectly appropriate."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-030",
+    "category": "joint-selection",
+    "prompt": "I'm a beginner building a step stool. It will have angled legs. I only have Tier 0 tools. What should I do?",
+    "expected": {
+      "joint_type": "pocket_screw",
+      "bail_out": "Consider building a straight-legged version first. A step stool with 90-degree joints is mechanically a simple Frame & Panel build and is much easier with Tier 0 tools. Angled legs require compound-angle joinery that is difficult without Tier 2-3 tools.",
+      "notes": "With Tier 0 tools and angled legs, pocket screws are the only option, but they're weak at angles. Reinforce every joint with glue blocks (triangular blocks glued into the inside corners). Better yet, build a straight-leg version — the angles are a Tier 3 challenge."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "joint-031",
+    "category": "joint-selection",
+    "prompt": "I need to attach a solid maple tabletop to the apron frame. The top is 36\" wide. What method should I use?",
+    "expected": {
+      "joint_type": "buttons_or_z_clips",
+      "notes": "Tabletop buttons or Z-clips are the correct method for attaching a solid-wood top to an apron frame. A 36\" wide maple top will expand and contract approximately 1/8\" to 3/16\" seasonally. Buttons slot into a groove cut in the apron and screw to the underside of the top, allowing cross-grain movement. Z-clips work similarly. NEVER glue a solid-wood top to the apron."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "natural"}
+  },
+  {
+    "id": "joint-032",
+    "category": "joint-selection",
+    "prompt": "I need to build a bed frame that I can disassemble and reassemble when I move apartments. What joint should I use for the side rails to headboard/footboard?",
+    "expected": {
+      "joint_type": "bolt_barrel_nut",
+      "dimensions": {"bolt": "3/8\" hex bolt, 3-4\" long", "barrel_nut": "3/8\""},
+      "bail_out": "Bed rail brackets (surface-mount hook hardware) are an even simpler alternative. They mount with screws and hook together — no drilling precision needed. Available at any hardware store.",
+      "notes": "Bolt and barrel nut or bed rail brackets/hook hardware are the standard for knockdown bed frames. Both allow repeated disassembly. Bolt and barrel nut is stronger; bed rail hardware is easier to install. Either needs a washer on every bolt."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  }
+]

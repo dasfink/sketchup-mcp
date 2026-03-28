@@ -1,0 +1,36 @@
+{
+  "id": "int-project-005",
+  "archetype": "box",
+  "tier": 2,
+  "prompt": "Design a drawer box for a dresser: 20\"W, 16\"D, 6\"H, half-blind dovetails, 1/2\" Baltic birch sides, 1/4\" plywood bottom",
+  "expected_joints": ["half_blind_dovetail", "through_dovetail", "groove"],
+  "expected_artifacts": [
+    "assembly_overview",
+    "front_elevation",
+    "side_elevation",
+    "exploded_view",
+    "assembly_sequence",
+    "cut_list",
+    "materials_list",
+    "overall_dimensions"
+  ],
+  "expected_parts": [
+    {"name": "Drawer Front", "qty": 1, "width": 0.5, "height": 6, "depth": 20},
+    {"name": "Drawer Back", "qty": 1, "width": 0.5, "height": 5.75, "depth": 19},
+    {"name": "Drawer Side", "qty": 2, "width": 0.5, "height": 6, "depth": 16},
+    {"name": "Drawer Bottom", "qty": 1, "width": 0.25, "height": 19.25, "depth": 15.25}
+  ],
+  "scoring_rubric": {
+    "joint_selection": 0.25,
+    "geometry_valid": 0.25,
+    "plan_artifacts_complete": 0.25,
+    "cut_list_accurate": 0.15,
+    "bail_out_offered": 0.10
+  },
+  "context": {
+    "skill_level": "intermediate",
+    "tools": "tier_2",
+    "finish": "none",
+    "notes": "Tests SketchUp small-face awareness -- thin plywood and dovetail geometry can cause issues with SU's 1/1000\" tolerance. Half-blind dovetails on the front (tails hidden), through dovetails on the back. Bottom panel sits in a groove routed in sides and front, slides in from the back. Back is shorter than sides to allow bottom panel insertion."
+  }
+}

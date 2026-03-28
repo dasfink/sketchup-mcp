@@ -1,0 +1,34 @@
+{
+  "id": "int-project-001",
+  "archetype": "flat-pack",
+  "tier": 1,
+  "prompt": "Build a small bookshelf, 24\"W x 10\"D x 30\"H, pine, 2 shelves, painted, I only have a drill and circular saw",
+  "expected_joints": ["pocket_screw", "butt"],
+  "expected_artifacts": [
+    "assembly_overview",
+    "cut_list",
+    "materials_list",
+    "overall_dimensions"
+  ],
+  "expected_parts": [
+    {"name": "Left Side", "qty": 1, "width": 0.75, "height": 30, "depth": 10},
+    {"name": "Right Side", "qty": 1, "width": 0.75, "height": 30, "depth": 10},
+    {"name": "Top", "qty": 1, "width": 0.75, "height": 24, "depth": 10},
+    {"name": "Bottom", "qty": 1, "width": 0.75, "height": 24, "depth": 10},
+    {"name": "Shelf", "qty": 2, "width": 0.75, "height": 22.5, "depth": 9.25},
+    {"name": "Back", "qty": 1, "width": 0.25, "height": 29.25, "depth": 23.25}
+  ],
+  "scoring_rubric": {
+    "joint_selection": 0.25,
+    "geometry_valid": 0.25,
+    "plan_artifacts_complete": 0.25,
+    "cut_list_accurate": 0.15,
+    "bail_out_offered": 0.10
+  },
+  "context": {
+    "skill_level": "beginner",
+    "tools": "tier_1",
+    "finish": "paint",
+    "notes": "Tier 1 tools only: drill and circular saw. No router, no table saw. Must use pocket screws or butt joints. Should NOT suggest dadoes or rabbets since user has no router."
+  }
+}
