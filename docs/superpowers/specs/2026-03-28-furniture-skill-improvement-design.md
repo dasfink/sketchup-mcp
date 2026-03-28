@@ -2,12 +2,26 @@
 
 ## Problem Statement
 
-The furniture-design-sketchup skill has working MCP tools (22 tools + WW library) and handles the loft bed project well, but lacks:
+The furniture-design-sketchup skill has working MCP tools (20 dedicated tools + WW Ruby helper library via `eval_ruby`) and handles the loft bed project well, but lacks:
 
 1. **Joint knowledge** -- no decision framework for when to use dado vs. rabbet vs. mortise-tenon. Tools exist but the skill doesn't know when to recommend each.
 2. **Plan artifact completeness** -- can make scenes and screenshots but no systematic approach to producing a complete "build package" appropriate to project complexity.
 3. **Project variety** -- tuned for one project (modular loft bed). Doesn't generalize to bookshelves, tables, workbenches, drawer boxes, or outdoor projects.
 4. **Material/tool awareness** -- doesn't factor in beginner tool constraints, wood species properties, or finish type when making recommendations.
+
+## Tooling Strategy: MCP Tools vs. WW Library
+
+The skill has two paths to SketchUp geometry:
+
+1. **Dedicated MCP tools** (20 tools): `safe_cut_dado`, `boolean_subtract`, `create_mortise_tenon`, etc. These are individual tool calls with typed parameters, easy for Claude to invoke, and self-documenting in tool schemas.
+
+2. **WW Ruby helper library** (via `eval_ruby`): `WW.dado`, `WW.rabbet`, `WW.mortise`, `WW.tenon`, `WW.half_lap`, `WW.taper`, `WW.bolt_hole`, `WW.barrel_nut_hole`, `WW.chamfer`, `WW.roundover`, `WW.board`, `WW.panel`, `WW.cut_list`, `WW.board_feet`, `WW.check_solids`. More ergonomic for multi-step operations but requires generating Ruby code strings.
+
+**Decision:** Prefer dedicated MCP tools when they exist for the operation (they're safer, typed, and verifiable). Use WW library via `eval_ruby` for operations that have no dedicated MCP tool (chamfer, roundover, taper, barrel_nut_hole with counterbore, board_feet calculation). When an operation exists in both (e.g., dado), prefer the MCP tool for simple cases and WW for complex multi-joint operations in a single script.
+
+This affects evals: Layer 2 tests should test both paths where both exist, but the skill should document which path it prefers for each joint type.
+
+---
 
 ## Approach: Research-First, Skill-Second
 
@@ -73,13 +87,13 @@ For each joint type, we document:
 - **Butt + screw** -- simplest possible. Pocket screws or face screws. Hide with filler for paint projects. MCP: just position components.
 
 **Panel joints (edge-to-edge, top attachment):**
-- **Biscuit** -- alignment aid, not structural. Swelling biscuit + glue. Edge-joining boards, aligning miters. MCP: `boolean_subtract` for slot.
-- **Tabletop buttons / Z-clips** -- NOT a wood joint, but critical knowledge. Allow seasonal wood movement. NEVER glue or pocket-screw a solid top across grain. MCP: model as hardware components.
+- **Biscuit** -- alignment aid, not structural. Swelling biscuit + glue. Edge-joining boards, aligning miters. *Model as annotation only* -- slot geometry is too thin for reliable SketchUp modeling (small-face problem).
+- **Tabletop buttons / Z-clips** -- NOT a wood joint, but critical knowledge. Allow seasonal wood movement. NEVER glue or pocket-screw a solid top across grain. *Model as hardware components* (simplified block shapes with labels).
 
 **Knockdown joints (disassembly/reassembly):**
 - **Bolt + barrel nut** -- bed rails, modular furniture. MCP: `safe_drill_hole` for bolt and cross-bore.
-- **Bed rail hardware** -- specialty bracket. Invisible when assembled.
-- **Cam lock + dowel** -- IKEA-style. Rarely hand-built but good for production.
+- **Bed rail hardware** -- specialty bracket. Invisible when assembled. *Model as annotation only* -- specialty hardware, represent as labeled block.
+- **Cam lock + dowel** -- IKEA-style. Rarely hand-built. *Model as annotation only* -- complex internal geometry not worth modeling.
 
 ---
 
@@ -127,7 +141,7 @@ Complex and modular projects.
 | Simple box/shelf | Tier 1 | Garage shelf, planter box |
 | Furniture | Tier 2 | Bookshelf, table, bed frame |
 | Complex/modular | Tier 3 | Loft bed, built-in cabinets |
-| Outdoor/structural | Tier 2+ | Shed, pergola, workbench |
+| Outdoor/structural | Tier 2 (Tier 3 if multi-structure) | Shed, pergola, workbench |
 
 ---
 
@@ -204,6 +218,29 @@ The skill must convert between nominal and actual dimensions:
 | 2x8 | 1-1/2" x 7-1/4" |
 | 2x10 | 1-1/2" x 9-1/4" |
 | 2x12 | 1-1/2" x 11-1/4" |
+
+### Plywood Reference
+
+Plywood nominal vs. actual thickness (critical for dado widths):
+
+| Nominal | Actual | Common uses |
+|---------|--------|-------------|
+| 1/4" | 1/4" (exact for hardwood underlayment) | Backs of bookcases/cabinets, drawer bottoms |
+| 1/2" | 1/2" (exact) or 15/32" | Drawer sides (Baltic birch), cabinet shelves |
+| 3/4" | 23/32" (standard) or 3/4" (Baltic birch) | Structural shelves, cabinet carcasses, tabletops |
+
+**Important:** Standard 3/4" plywood is actually 23/32". Dados sized at 3/4" will be too wide, creating sloppy joints. Baltic birch plywood is a true 3/4" (and comes in 5'x5' sheets). The skill must ask which plywood type and use the correct actual dimension for dado width.
+
+### Wood Species Quick Reference
+
+| Context | Recommended | Avoid |
+|---------|------------|-------|
+| Indoor, painted | Common boards (pine, spruce, SPF) | Hardwood (overkill, expensive) |
+| Indoor, stained | Poplar (budget), oak, maple, walnut | SPF (uneven stain absorption) |
+| Indoor, natural/oil | Cherry, walnut, white oak | Pine (soft, dents easily) |
+| Outdoor, structural | Red-toned 2x (Southern Yellow Pine, Douglas Fir), pressure-treated | Yellow-toned 2x (soft, warps), untreated SPF |
+| Outdoor, non-structural | Cedar, redwood | Pine (rots quickly) |
+| Drawer sides | 1/2" Baltic birch plywood or poplar | Softwood (wears quickly) |
 
 ### Beginner Tool Tiers
 
@@ -317,6 +354,65 @@ End-to-end project builds from natural language prompt to complete model + plan.
 | Plan artifacts complete for tier | 25% |
 | Cut list accurate | 15% |
 | Beginner bail-out offered (when applicable) | 10% |
+
+### Eval Harness Architecture
+
+**Layer 1 execution:** Each test case prompts the skill (via Claude Code conversation) and uses **LLM-as-judge** to score the response. The judge receives the skill's output plus the expected answer, and returns a structured verdict: `{pass: bool, reasoning: string}`. This avoids brittle keyword matching while keeping evaluation automated. The judge model should be a different Claude instance than the one running the skill.
+
+**Layer 1 JSON schema:**
+```json
+{
+  "id": "joint-sel-001",
+  "category": "joint-selection",
+  "prompt": "I need to join a 3/4\" pine shelf into a 3/4\" pine upright for a bookshelf",
+  "expected": {
+    "joint_type": "dado",
+    "dimensions": {"width": "23/32\"", "depth": "3/8\""},
+    "bail_out": "cleat strip + pocket screws",
+    "notes": "Use actual plywood thickness if plywood shelf"
+  },
+  "context": {"skill_level": "beginner", "tools": "tier_1", "finish": "paint"}
+}
+```
+
+**Layer 2 execution:** Each test case is a script that: (1) creates fixture geometry via MCP tools, (2) executes the operation under test, (3) verifies results via `verify_bounds`, `eval_ruby` solid checks, or `generate_cutlist`. Fully automated, no LLM judge needed. Requires SketchUp running.
+
+**Layer 2 JSON schema:**
+```json
+{
+  "id": "dado-001",
+  "category": "joinery-modeling",
+  "setup": [
+    {"tool": "create_component_box", "params": {"name": "Upright", "width": 0.75, "height": 36, "depth": 11.25}}
+  ],
+  "operation": {"tool": "safe_cut_dado", "params": {"component": "Upright", "face": "y+", "width": 0.72, "depth": 0.375, "offset": 8}},
+  "verify": [
+    {"tool": "verify_bounds", "component": "Upright", "expected": {"width": 0.75, "height": 36, "depth": 11.25}},
+    {"tool": "eval_ruby", "script": "WW.check_solids('Upright')", "expected": true}
+  ]
+}
+```
+
+**Layer 3 execution:** Full conversation simulation. The test provides a project prompt, the skill runs end-to-end producing a model and plan artifacts, then a human-in-the-loop scorer plus automated checks evaluate the result. Automated checks: `verify_bounds` on all components, `verify_scenes` for required scenes, `generate_cutlist` for BOM accuracy. Human scorer: evaluates joint appropriateness and overall plan quality against the rubric.
+
+**Layer 3 JSON schema:**
+```json
+{
+  "id": "int-bookshelf-001",
+  "archetype": "flat-pack",
+  "tier": 2,
+  "prompt": "Design a simple bookshelf: 36\" wide, 12\" deep, 48\" tall, pine, 3 adjustable shelves, painted white",
+  "expected_joints": ["dado", "rabbet"],
+  "expected_artifacts": ["assembly_overview", "front_elevation", "side_elevation", "plan_view", "joinery_details", "exploded_view", "assembly_sequence"],
+  "expected_parts_count": 7,
+  "context": {"skill_level": "beginner", "tools": "tier_1", "finish": "paint"}
+}
+```
+
+**Expected eval runtime:**
+- Layer 1: ~5 minutes (50-100 LLM calls, parallelizable)
+- Layer 2: ~15 minutes (20-30 SketchUp operations, sequential)
+- Layer 3: ~45 minutes (5-8 full project builds, sequential, some human scoring)
 
 ---
 
