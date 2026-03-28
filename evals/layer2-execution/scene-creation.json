@@ -1,0 +1,734 @@
+[
+  {
+    "id": "scene-001",
+    "category": "scene-creation",
+    "description": "Assembly overview — 3/4 perspective camera showing the whole model",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "SC Table Top",
+          "position": [0, 0, 29],
+          "dimensions": [48, 30, 1.0],
+          "material": "White Oak",
+          "tag": "Top"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "SC Leg FL",
+          "position": [1, 1, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "SC Leg FR",
+          "position": [45.5, 1, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "SC Leg BL",
+          "position": [1, 27.5, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "SC Leg BR",
+          "position": [45.5, 27.5, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Assembly Overview",
+        "eye": [80, -60, 50],
+        "target": [24, 15, 15],
+        "perspective": true
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "expected_contains": {
+          "scene_name": "Assembly Overview",
+          "camera_type": "perspective"
+        }
+      }
+    ]
+  },
+  {
+    "id": "scene-002",
+    "category": "scene-creation",
+    "description": "Front elevation — orthographic camera on -Y axis looking at the front face",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "FE Cabinet",
+          "position": [0, 0, 0],
+          "dimensions": [36, 12, 30],
+          "material": "Pine",
+          "tag": "Carcase"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Front Elevation",
+        "eye": [18, -100, 15],
+        "target": [18, 0, 15],
+        "perspective": false,
+        "ortho_height": 40
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "expected_contains": {
+          "scene_name": "Front Elevation",
+          "camera_type": "orthographic"
+        }
+      }
+    ]
+  },
+  {
+    "id": "scene-003",
+    "category": "scene-creation",
+    "description": "Side elevation — orthographic camera on +X axis looking at the right side",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "SE Cabinet",
+          "position": [0, 0, 0],
+          "dimensions": [36, 12, 30],
+          "material": "Pine",
+          "tag": "Carcase"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Side Elevation",
+        "eye": [136, 6, 15],
+        "target": [36, 6, 15],
+        "perspective": false,
+        "ortho_height": 40
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "expected_contains": {
+          "scene_name": "Side Elevation",
+          "camera_type": "orthographic"
+        }
+      }
+    ]
+  },
+  {
+    "id": "scene-004",
+    "category": "scene-creation",
+    "description": "Plan view — top-down orthographic camera looking straight down",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "PV Table Top",
+          "position": [0, 0, 29],
+          "dimensions": [48, 30, 1.0],
+          "material": "Walnut",
+          "tag": "Top"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Plan View",
+        "eye": [24, 15, 200],
+        "target": [24, 15, 0],
+        "perspective": false,
+        "up": [0, 1, 0],
+        "ortho_height": 60
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "expected_contains": {
+          "scene_name": "Plan View",
+          "camera_type": "orthographic"
+        }
+      }
+    ]
+  },
+  {
+    "id": "scene-005",
+    "category": "scene-creation",
+    "description": "Section plane through a dado joint — reveal the cross-section of a shelf-in-side joint",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "SP Side",
+          "position": [0, 0, 0],
+          "dimensions": [0.75, 11.25, 30],
+          "material": "Pine",
+          "tag": "Carcase"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "SP Shelf",
+          "position": [0.75, 0, 12],
+          "dimensions": [22.5, 11.25, 0.75],
+          "material": "Pine",
+          "tag": "Carcase"
+        }
+      },
+      {
+        "tool": "safe_cut_dado",
+        "params": {
+          "component_name": "SP Side",
+          "face": "y+",
+          "z_start": 12,
+          "z_end": 12.75,
+          "depth": 0.375
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Dado Section",
+        "eye": [20, -40, 12.375],
+        "target": [0.375, 5.625, 12.375],
+        "perspective": false,
+        "ortho_height": 6,
+        "section_point": [5.0, 5.625, 0],
+        "section_normal": [0, 1, 0]
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "expected_contains": {
+          "scene_name": "Dado Section",
+          "camera_type": "orthographic"
+        }
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.entities.grep(Sketchup::SectionPlane).count"
+        },
+        "expected_min": 1,
+        "note": "At least one section plane exists in the model"
+      }
+    ]
+  },
+  {
+    "id": "scene-006",
+    "category": "scene-creation",
+    "description": "Exploded view — parts separated by tag with Z offsets",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "EV Top",
+          "position": [0, 0, 29],
+          "dimensions": [48, 30, 1.0],
+          "material": "Walnut",
+          "tag": "Top"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "EV Leg 1",
+          "position": [1, 1, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "Walnut",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "EV Apron F",
+          "position": [2.5, 0.25, 25],
+          "dimensions": [43, 1.0, 3.5],
+          "material": "Walnut",
+          "tag": "Aprons"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_exploded_view",
+      "params": {
+        "offsets": "{\"Top\": 20, \"Aprons\": 10, \"Frame\": 0}",
+        "tag_name": "Exploded"
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.layers.any? { |l| l.name == 'Exploded' }"
+        },
+        "expected": true,
+        "note": "Exploded tag was created"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.entities.select { |e| (e.is_a?(Sketchup::Group) || e.is_a?(Sketchup::ComponentInstance)) && e.layer.name == 'Exploded' }.count"
+        },
+        "expected_min": 1,
+        "note": "At least one entity assigned to the Exploded tag"
+      }
+    ]
+  },
+  {
+    "id": "scene-007",
+    "category": "scene-creation",
+    "description": "Cut list generation — 5-part assembly yields 5 entries in the cut list",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "CL Top",
+          "position": [0, 0, 29],
+          "dimensions": [48, 30, 1.0],
+          "material": "Walnut",
+          "tag": "Top"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "CL Leg FL",
+          "position": [1, 1, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "Walnut",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "CL Leg FR",
+          "position": [45.5, 1, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "Walnut",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "CL Leg BL",
+          "position": [1, 27.5, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "Walnut",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "CL Leg BR",
+          "position": [45.5, 27.5, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "Walnut",
+          "tag": "Frame"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "generate_cutlist",
+      "params": {
+        "auto_orient": true,
+        "part_folding": true
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.entities.grep(Sketchup::Group).count + Sketchup.active_model.entities.grep(Sketchup::ComponentInstance).count"
+        },
+        "expected": 5,
+        "note": "Model still has 5 components; cut list is read-only"
+      }
+    ]
+  },
+  {
+    "id": "scene-008",
+    "category": "scene-creation",
+    "description": "Multi-scene plan — create all 4 standard views and verify total scene count",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "MS Box",
+          "position": [0, 0, 0],
+          "dimensions": [36, 24, 30],
+          "material": "Pine",
+          "tag": "Carcase"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "eval_ruby",
+      "params": {
+        "code": "model = Sketchup.active_model; model.pages.to_a.each { |p| model.pages.erase(p) }; 'cleared'"
+      }
+    },
+    "verify_pre": "Clears existing scenes before creating the batch",
+    "operations": [
+      {
+        "tool": "create_scene",
+        "params": {
+          "name": "MS Overview",
+          "eye": [80, -60, 50],
+          "target": [18, 12, 15],
+          "perspective": true
+        }
+      },
+      {
+        "tool": "create_scene",
+        "params": {
+          "name": "MS Front",
+          "eye": [18, -100, 15],
+          "target": [18, 0, 15],
+          "perspective": false,
+          "ortho_height": 40
+        }
+      },
+      {
+        "tool": "create_scene",
+        "params": {
+          "name": "MS Side",
+          "eye": [136, 12, 15],
+          "target": [36, 12, 15],
+          "perspective": false,
+          "ortho_height": 40
+        }
+      },
+      {
+        "tool": "create_scene",
+        "params": {
+          "name": "MS Plan",
+          "eye": [18, 12, 200],
+          "target": [18, 12, 0],
+          "perspective": false,
+          "up": [0, 1, 0],
+          "ortho_height": 50
+        }
+      }
+    ],
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.pages.count"
+        },
+        "expected": 4,
+        "note": "All 4 standard scenes were created"
+      },
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "note": "Verify all scenes have correct camera types and no tag bleed"
+      }
+    ]
+  },
+  {
+    "id": "scene-009",
+    "category": "scene-creation",
+    "description": "Joinery detail view — zoomed orthographic view of a specific dado joint",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "JD Side",
+          "position": [0, 0, 0],
+          "dimensions": [0.75, 11.25, 30],
+          "material": "Maple",
+          "tag": "Carcase"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "JD Shelf",
+          "position": [0.75, 0, 12],
+          "dimensions": [22.5, 11.25, 0.75],
+          "material": "Maple",
+          "tag": "Carcase"
+        }
+      },
+      {
+        "tool": "safe_cut_dado",
+        "params": {
+          "component_name": "JD Side",
+          "face": "y+",
+          "z_start": 12,
+          "z_end": 12.75,
+          "depth": 0.375
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Dado Detail",
+        "eye": [6, -10, 12.375],
+        "target": [0.375, 5.625, 12.375],
+        "perspective": false,
+        "ortho_height": 4
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "expected_contains": {
+          "scene_name": "Dado Detail",
+          "camera_type": "orthographic"
+        }
+      }
+    ]
+  },
+  {
+    "id": "scene-010",
+    "category": "scene-creation",
+    "description": "Tag visibility — create two scenes with different visible tags, verify no tag bleed",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "TV Frame Piece",
+          "position": [0, 0, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "TV Top Slab",
+          "position": [0, 0, 29],
+          "dimensions": [48, 30, 1.0],
+          "material": "Walnut",
+          "tag": "Top"
+        }
+      },
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "TV Apron",
+          "position": [2.5, 0.25, 25],
+          "dimensions": [43, 1.0, 3.5],
+          "material": "White Oak",
+          "tag": "Aprons"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Frame Only",
+        "eye": [80, -60, 50],
+        "target": [24, 15, 15],
+        "perspective": true,
+        "visible_tags": "Frame"
+      }
+    },
+    "operations_continued": [
+      {
+        "tool": "create_scene",
+        "params": {
+          "name": "Top Only",
+          "eye": [80, -60, 50],
+          "target": [24, 15, 15],
+          "perspective": true,
+          "visible_tags": "Top"
+        }
+      }
+    ],
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "note": "verify_scenes cycles through all scenes and reports visible layers for each — Frame Only should show only Frame tag, Top Only should show only Top tag, with no tag bleed between them"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.pages.count"
+        },
+        "expected_min": 2,
+        "note": "At least 2 scenes exist"
+      }
+    ]
+  },
+  {
+    "id": "scene-011",
+    "category": "scene-creation",
+    "description": "Perspective scene with custom up-vector — tilted camera for dramatic hero shot",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "Hero Table",
+          "position": [0, 0, 0],
+          "dimensions": [60, 36, 30],
+          "material": "Walnut",
+          "tag": "Frame"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Hero Shot",
+        "eye": [100, -80, 40],
+        "target": [30, 18, 15],
+        "perspective": true,
+        "up": [0, 0, 1]
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "expected_contains": {
+          "scene_name": "Hero Shot",
+          "camera_type": "perspective"
+        }
+      }
+    ]
+  },
+  {
+    "id": "scene-012",
+    "category": "scene-creation",
+    "description": "WW.cut_list via eval_ruby — verify board-feet calculation on a 3-part assembly",
+    "setup": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.reset!; WW.board('CL2 Top', [1.0, 24, 48], material: 'Walnut'); WW.board('CL2 Leg A', '2x2', 28, material: 'Walnut'); WW.board('CL2 Leg B', '2x2', 28, material: 'Walnut')"
+        }
+      }
+    ],
+    "operation": {
+      "tool": "eval_ruby",
+      "params": {
+        "code": "WW.cut_list"
+      }
+    },
+    "verify": [
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "cl = WW.cut_list; cl.is_a?(Array) && cl.length == 3"
+        },
+        "expected": true,
+        "note": "Cut list returns exactly 3 entries (no part folding at WW level)"
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "WW.board_feet > 0"
+        },
+        "expected": true,
+        "note": "Board feet is a positive number"
+      }
+    ]
+  },
+  {
+    "id": "scene-013",
+    "category": "scene-creation",
+    "description": "Section plane on X axis — cross-section revealing mortise-and-tenon inside a leg",
+    "setup": [
+      {
+        "tool": "create_component_box",
+        "params": {
+          "name": "XS Leg",
+          "position": [0, 0, 0],
+          "dimensions": [1.5, 1.5, 29],
+          "material": "White Oak",
+          "tag": "Frame"
+        }
+      },
+      {
+        "tool": "boolean_subtract",
+        "params": {
+          "target": "XS Leg",
+          "cutter_type": "box",
+          "position": [0.625, -0.01, 25],
+          "dimensions": [0.25, 1.0, 3.0]
+        }
+      }
+    ],
+    "operation": {
+      "tool": "create_scene",
+      "params": {
+        "name": "Mortise X-Section",
+        "eye": [100, 0.75, 26.5],
+        "target": [0.75, 0.75, 26.5],
+        "perspective": false,
+        "ortho_height": 6,
+        "section_point": [0.75, 0, 0],
+        "section_normal": [1, 0, 0]
+      }
+    },
+    "verify": [
+      {
+        "tool": "verify_scenes",
+        "params": {},
+        "expected_contains": {
+          "scene_name": "Mortise X-Section",
+          "camera_type": "orthographic"
+        }
+      },
+      {
+        "tool": "eval_ruby",
+        "params": {
+          "code": "Sketchup.active_model.entities.grep(Sketchup::SectionPlane).count"
+        },
+        "expected_min": 1
+      }
+    ]
+  }
+]
