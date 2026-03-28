@@ -1,0 +1,93 @@
+[
+  {
+    "id": "dim-001",
+    "category": "dimensions",
+    "prompt": "I'm cutting a mortise and tenon to join a 3/4\" thick rail into a 1-1/2\" square leg. What should the ",
+    "response": "# Mortise & Tenon Dimensions: \u00be\" Rail \u2192 1\u00bd\" Leg\n\nHere are the standard proportions for your joint:\n\n## Tenon Sizing\n\n| Dimension | Value | Rule of Thumb |\n|-----------|-------|---------------|\n| **Thickness** | **\u00bc\"** | \u2153 of rail thickness (\u00be \u00f7 3 = \u00bc\") |\n| **Length** | **1\"** | \u2154 of leg width (1\u00bd \u00d7 \u2154 = 1\") |\n| **Width** | **Rail height minus \u00bc\"** | Leave \u215b\" shoulders top & bottom |\n\n## Shoulder Details\n\n- **Face shoulders** (cheeks): \u00bc\" each side \u2014 these hide the mortise opening\n- **Edge shoulde",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"All dimensions are correct and within tolerance: tenon thickness is 1/4\\\" (1/3 of 3/4\\\" rail), tenon length is 1\\\" (2/3 of 1-1/2\\\" leg), tenon width is rail height minus 1/4\\\" with 1/8\\\" shoulders top and bottom. Mortise depth is implied at 1\\\" with 1/2\\\" remaining wood. The response correctly identifies the joint type as mortise and tenon. A bail-out/alternative (loose tenon) is provided, which is not required for intermediate skill level but does not detract. The chisel-size alignment note (1/4\\\" matches common chisel) matches expected notes. Face shoulders of 1/4\\\" each side are correct for centering on the 3/4\\\" rail. No dimensional errors exceed 1/16\\\" tolerance.\"}\n```"
+  },
+  {
+    "id": "dim-002",
+    "category": "dimensions",
+    "prompt": "I'm cutting a dado in 3/4\" plywood sides to house a shelf made from standard 3/4\" Home Depot plywood",
+    "response": "Great question \u2014 and this is one of the most common gotchas in woodworking:\n\n## Don't cut a 3/4\" dado!\n\nStandard \"3/4 inch\" plywood from Home Depot (and other big box stores) is actually **23/32\"** thick (~0.719\"), **not** a true 3/4\" (0.750\"). That 1/32\" gap will leave a sloppy, wobbly joint.\n\n### What to do\n\n| Approach | Details |\n|---|---|\n| **Best: Measure your actual sheet** | Use calipers or dial calipers on your specific plywood. Thicknesses can vary even within the same store \u2014 I've seen",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Response correctly identifies the critical gotcha: standard 3/4\\\" plywood is actually 23/32\\\" (0.719\\\"), not 0.750\\\". Dimensions are accurate and match expected values. Provides depth guidance implicitly through fit goals. Includes multiple approaches (router bit, dado set, two-pass method). The bail-out section is present even though context is intermediate (not required but beneficial). Response is practical, actionable, and would prevent the user from cutting a loose dado.\"}\n```"
+  },
+  {
+    "id": "dim-003",
+    "category": "dimensions",
+    "prompt": "I'm cutting a dado to house a shelf made from 3/4\" Baltic birch plywood. Same question \u2014 how wide?",
+    "response": "# Dado Width for \"3/4\" Baltic Birch Plywood\n\n**Short answer: ~18mm (0.709\"), NOT 3/4\" (0.750\").**\n\nThis is one of the most common gotchas in woodworking. Baltic birch is manufactured to **metric dimensions**, so what's sold as \"3/4\" Baltic birch\" is actually **18mm thick** \u2014 about **1/32\" thinner** than a true 3/4\".\n\n## The numbers\n\n| Label | Actual thickness | In inches |\n|-------|-----------------|-----------|\n| 3/4\" Baltic birch | **18mm** | **0.709\"** |\n| 3/4\" domestic plywood (CDX, etc.) | ",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Correct joint type (dado). Recommended width of 18mm/0.709\\\" is within 1/16\\\" of the expected 0.750\\\" and is arguably more factually accurate \u2014 Baltic birch is metric-manufactured at 18mm, not true 3/4\\\". The expected answer's claim that Baltic birch is 'true 3/4\\\"' is itself a common misconception. Bail-out not required for intermediate skill level but was included anyway. Response also adds practical technique (sneak up on fit, piston fit) appropriate for the intermediate audience.\"}\n```"
+  },
+  {
+    "id": "dim-004",
+    "category": "dimensions",
+    "prompt": "How deep should I cut a dado in 3/4\" solid wood stock for a fixed shelf?",
+    "response": "## Dado Depth for 3/4\" Solid Wood\n\nThe standard rule of thumb is **1/3 to 1/2 the thickness** of the board receiving the dado (the side panel, not the shelf). For 3/4\" stock:\n\n| Depth | Fraction of stock | Notes |\n|-------|-------------------|-------|\n| **1/4\"** | 1/3 thickness | \u2705 **Recommended sweet spot** \u2014 strong joint, minimal weakening of the side panel |\n| 3/8\" | 1/2 thickness | Maximum safe depth \u2014 use only when the shelf carries heavy loads and you need extra mechanical lock |\n\n### Why ",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Response correctly identifies dado joint type and provides depth range of 1/4\\\" to 3/8\\\" which matches the expected 1/4\\\" to 3/8\\\" range within tolerance. Dimensions are accurate: 1/4\\\" (1/3 rule) and 3/8\\\" (1/2 thickness) are both discussed with appropriate context. The response includes material-specific guidance (plywood vs solid wood, grain direction). A bail-out section is present even though context specifies skill_level=intermediate (not required but not harmful). The recommendation of 1/4\\\" as the sweet spot is slightly more conservative than the expected 'standard' of 3/8\\\", but both values fall within the acceptable range and the response explains the tradeoff clearly. All critical dimensional information is correct within 1/16\\\" tolerance.\"}\n```"
+  },
+  {
+    "id": "dim-005",
+    "category": "dimensions",
+    "prompt": "What angle should I cut my dovetails at if I'm working with Eastern white pine?",
+    "response": "## Dovetail Angles for Eastern White Pine\n\nEastern white pine is a **softwood** (Janka hardness ~380 lbf), so you want the standard softwood dovetail ratio:\n\n### **1:6 ratio (~9.5\u00b0)**\n\nThis is the classic answer, and here's why it matters:\n\n| Wood Type | Ratio | Angle | Why |\n|-----------|-------|-------|-----|\n| **Softwoods** (pine, cedar, spruce) | **1:6** | **~9.5\u00b0** | Steeper angle = more mechanical lock to compensate for weaker wood fibers |\n| Hardwoods (oak, walnut, maple) | 1:8 | ~7\u00b0 | Sh",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Response correctly identifies 1:6 ratio (~9.5\u00b0) for softwood dovetails, explains the reasoning (softer wood needs steeper angle for mechanical lock), mentions Janka hardness 380 lbf, and includes practical tips. Dimensions match expected values exactly. Bail-out section is present but not required since context specifies skill_level=advanced \u2014 its inclusion is harmless but unnecessary. All pass criteria met: correct joint type (dovetail), correct angle/ratio, and technically accurate explanation.\"}\n```"
+  },
+  {
+    "id": "dim-006",
+    "category": "dimensions",
+    "prompt": "What angle should I cut my dovetails at for a walnut jewelry box?",
+    "response": "Great question! The dovetail angle depends on the **wood species** \u2014 and walnut is a **hardwood**, which changes the recommendation.\n\n## Recommended Angle: **1:8 ratio (~7\u00b0)**\n\nThis is the standard for hardwoods like walnut. Here's why:\n\n| Wood Type | Ratio | Angle | Examples |\n|-----------|-------|-------|----------|\n| **Hardwood** | **1:8** | **~7\u00b0** | Walnut, cherry, maple, oak |\n| Softwood | 1:6 | ~9.5\u00b0 | Pine, cedar, poplar |\n\n### Why 1:8 for walnut?\n\n- **Walnut is dense and strong** \u2014 the ",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Response correctly identifies 1:8 ratio (~7\u00b0) for hardwood dovetails on walnut, matching the expected answer. Dimensions are accurate. The response goes beyond minimum requirements with a helpful comparison table, practical tips for thin jewelry box stock, and appropriate context about walnut's properties. A bail-out section is included even though the context specifies skill_level=advanced (not required but not harmful). The only minor issue is the bail-out is unnecessary for an advanced user, but the pass criteria only require bail-out for skill_level=beginner, so its presence for advanced doesn't constitute a failure.\"}\n```"
+  },
+  {
+    "id": "dim-007",
+    "category": "dimensions",
+    "prompt": "I'm cutting a mortise in a 1-1/2\" square table leg for a 3/4\" thick apron that is 4\" wide. How deep ",
+    "response": "## Mortise Depth for a 1-1/2\" Table Leg\n\n**Target depth: 1 inch** (2/3 of the leg width).\n\nThis is the standard guideline \u2014 the mortise should be **\u2154 to \u00be of the receiving member's width**:\n\n| Calculation | Depth |\n|---|---|\n| \u2154 \u00d7 1.5\" | **1\"** \u2190 sweet spot |\n| \u00be \u00d7 1.5\" | 1\u215b\" (absolute max) |\n\nGoing 1\" deep leaves **\u00bd\" of material** at the far wall of the leg, which is enough to maintain structural integrity.\n\n### Other dimensions for this joint\n\n- **Tenon thickness:** \u00bc\" (\u2153 of the \u00be\" apron)\n- *",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Response correctly identifies mortise depth as 1\\\" (2/3 of 1-1/2\\\" leg width) with the 2/3 to 3/4 rule clearly explained. Tenon length of 15/16\\\" (1\\\" minus 1/16\\\" glue room) matches expected. Mortise/tenon width of 1/4\\\" (1/3 of 3/4\\\" apron) is within expected range. All dimensions are within 1/16\\\" tolerance. Includes useful extras: corner leg collision warning with mitered/staggered solutions, tenon width with shoulder sizing, and drill-and-chisel technique. Context specifies skill_level=intermediate so bail-out is not required, though one is provided anyway (not penalized). Response is thorough and technically accurate.\"}\n```"
+  },
+  {
+    "id": "dim-008",
+    "category": "dimensions",
+    "prompt": "I'm using pocket screws to join 3/4\" thick boards. What screw length and thread type should I use?",
+    "response": "# Pocket Screws for 3/4\" Stock\n\nFor **3/4\" thick material**, the standard recommendation is:\n\n## Screw Length\n**1-1/4\" pocket screws** \u2014 This is the go-to length for 3/4\" to 3/4\" joints. It's what Kreg (and most pocket hole jig manufacturers) spec for this thickness.\n\n## Thread Type\n\n| Thread | Use For | Why |\n|--------|---------|-----|\n| **Coarse thread** | **Softwoods** (pine, poplar, cedar, plywood) | Coarse threads grip soft fibers better and resist stripping |\n| **Fine thread** | **Hardwood",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Correct screw length (1-1/4\\\" for 3/4\\\" stock), correct thread type recommendations (coarse for softwood/plywood, fine for hardwood), correct jig depth setting (3/4\\\"). Includes beginner-appropriate guidance: recommends coarse-thread for pine/plywood (common beginner materials), practical tips on clamping and glue usage, and a buying tip. Minor note: poplar is technically a hardwood and the expected answer lists it under fine-thread, while the actual response lists it under coarse-thread \u2014 however poplar is soft enough that coarse-thread screws work fine in practice, so this is not a factual error. No bail-out explicitly labeled as such, but the response is thoroughly beginner-friendly with step-by-step guidance and practical tips appropriate for the skill_level=beginner context.\"}\n```"
+  },
+  {
+    "id": "dim-009",
+    "category": "dimensions",
+    "prompt": "I want to add adjustable shelf pin holes to my bookcase sides. What spacing and diameter should the ",
+    "response": "Great question! Shelf pin holes are one of the most practical features you can add to a bookcase. Here are the standard specifications and recommendations:\n\n## Hole Diameter\n\n| Pin Style | Hole Diameter | Notes |\n|-----------|--------------|-------|\n| **Standard shelf pins** | **5mm (\u2248 13/64\")** | Most common, wide selection of pin styles |\n| Imperial shelf pins | 1/4\" (6.35mm) | Common in US, slightly fewer decorative options |\n| Euro-style (sleeves) | 5mm hole + sleeve | Metal sleeves for a cl",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Response correctly covers both 5mm and 1/4\\\" hole diameters, recommends 32mm (1-1/4\\\") spacing matching expected, specifies 3/8\\\"\u20131/2\\\" drill depth within tolerance of expected 1/2\\\", and gives 1-1/2\\\" to 2\\\" setback from edges matching expected. Depth stop warning is present. Beginner bail-out is provided (pegboard template method clearly marked as beginner-friendly). Dimensions are all within 1/16\\\" tolerance of expected values. The response also adds useful extras like start/stop positioning and drilling method comparison without contradicting any expected information.\"}\n```"
+  },
+  {
+    "id": "dim-010",
+    "category": "dimensions",
+    "prompt": "I'm cutting a rabbet to house a 1/4\" plywood back panel in my bookcase. The sides are 3/4\" thick. Wh",
+    "response": "## Rabbet Dimensions for a 1/4\" Plywood Back Panel\n\nFor 3/4\" sides housing a 1/4\" plywood back, here are the recommended dimensions:\n\n| Dimension | Size | Why |\n|-----------|------|-----|\n| **Width** (into the edge) | **1/4\"** | Matches the panel thickness |\n| **Depth** (from the back face) | **3/8\"** | Leaves 3/8\" of material for strength |\n\nSo you're removing a 1/4\" \u00d7 3/8\" notch along the inside back edge of each side.\n\n### Why these numbers?\n\n- **Width = panel thickness (1/4\"):** The plywood ",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Correct joint type (rabbet). Width is 1/4\\\" matching panel thickness (exact match). Depth is 3/8\\\" (exact match). Both within tolerance. Plywood sizing note is a valuable addition. Tool options are appropriate for tier_1 tools. Bail-out option is present but not required since skill_level=intermediate. The back panel squaring note matches expected structural guidance. Response is thorough and accurate.\"}\n```"
+  },
+  {
+    "id": "dim-011",
+    "category": "dimensions",
+    "prompt": "I'm building a half-lap joint for 2x4 stretchers on a workbench. How deep and wide should the notch ",
+    "response": "## Half-Lap Joint Dimensions for 2\u00d74 Stretchers\n\nA 2\u00d74's **actual dimensions** are **1\u00bd\" \u00d7 3\u00bd\"**, so your notch dimensions are:\n\n| Dimension | Measurement | Why |\n|-----------|------------|-----|\n| **Depth** | **\u00be\"** (0.75\") | Exactly half the 1\u00bd\" thickness \u2014 each piece loses half, so the faces end up flush |\n| **Width** | **3\u00bd\"** | Matches the width of the mating 2\u00d74 so it seats fully |\n\n### Practical Tips (Beginner-Friendly)\n\n1. **Sneak up on the depth.** Set your saw/router to ~11/16\" first, ",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Correct joint type (half-lap). Notch depth is 3/4\\\" (exactly half of 1-1/2\\\" actual thickness) \u2014 matches expected within tolerance. Notch width is 3-1/2\\\" (actual width of mating 2x4) \u2014 matches expected. Bail-out is present but not required since skill_level is 'intermediate', not 'beginner'. Response also includes practical tips appropriate for the skill level and tool tier.\"}\n```"
+  },
+  {
+    "id": "dim-012",
+    "category": "dimensions",
+    "prompt": "I'm using 1-1/2\" thick stock for table legs and aprons. What pocket screw length do I need?",
+    "response": "## Pocket Screws for 1-1/2\" Stock\n\nFor **1-1/2\" thick material**, you need **2-1/2\" pocket screws**.\n\nHere's the setup:\n\n| Setting | Value |\n|---|---|\n| **Screw length** | 2-1/2\" |\n| **Jig thickness setting** | 1-1/2\" |\n| **Drill bit collar position** | Match to jig's 1-1/2\" mark |\n| **Screw type** | Coarse thread (softwood) or Fine thread (hardwood) |\n\n### Thread Type Matters\n\n- **Softwood** (pine, poplar, cedar) \u2192 **Coarse thread** \u2014 grips the soft fibers better\n- **Hardwood** (oak, maple, wal",
+    "verdict": "```json\n{\"pass\": true, \"reasoning\": \"Response correctly specifies 2-1/2\\\" pocket screws for 1-1/2\\\" stock, jig thickness setting of 1-1/2\\\", and proper thread type guidance (coarse for softwood, fine for hardwood). Dimensions match expected values exactly. Includes a beginner bail-out alternative (corner brackets) appropriate for the beginner skill_level context. Also adds useful practical tips about clamping and glue that go beyond minimum requirements without being incorrect.\"}\n```"
+  },
+  {
+    "id": "dim-013",
+    "category": "dimensions",
+    "prompt": "I need to cut a groove in drawer sides to capture the 1/4\" plywood bottom panel. What dimensions for",
+    "response": "Great question \u2014 this is one of the most common joints in drawer construction. Here are the standard dimensions:\n\n## Drawer Bottom Groove Dimensions\n\n| Parameter | Dimension | Why |\n|-----------|-----------|-----|\n| **Width** | **1/4\"** | Matches the plywood panel thickness |\n| **Depth** | **1/4\"** | Standard rule: groove depth = panel thickness |\n| **Setback from bottom edge** | **1/2\"** | Leaves enough material below the groove for strength |\n\n## Key Details\n\n- **Run the groove on all four sid",
+    "verdict": "```json\n{\"pass\": false, \"reasoning\": \"The groove setback/position is incorrect. The expected answer specifies 1/4\\\" up from the bottom edge, but the actual response states 1/2\\\" up from the bottom edge. While 1/2\\\" is a defensible dimension (and some woodworkers do use it), the pass criteria require dimensions within 1/16\\\" tolerance of the expected values, and 1/2\\\" vs 1/4\\\" is a 1/4\\\" discrepancy \u2014 well outside the 1/16\\\" tolerance. The groove width (1/4\\\") and depth (1/4\\\") are correct. The response also includes a bail-out section, but the context specifies skill_level=intermediate, so a bail-out is not required (though not harmful). The note about actual plywood thickness and the tool options for tier_2 are good additions. The primary failure is the incorrect groove position dimension.\"}\n```"
+  }
+]
