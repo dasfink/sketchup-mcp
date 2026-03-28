@@ -1,0 +1,738 @@
+WEBVTT
+Kind: captions
+Language: en-CA
+
+00:00:00.734 --> 00:00:03.002
+So, in this video, I'm
+gonna draw a small table.
+
+00:00:03.003 --> 00:00:05.505
+But before we get
+started, I want to change
+
+00:00:05.506 --> 00:00:08.007
+a few of the settings.
+So, by default,
+
+00:00:08.008 --> 00:00:11.077
+we are in the
+architectural style.
+
+00:00:11.078 --> 00:00:13.913
+And the architectural style
+has got these thick lines
+
+00:00:13.914 --> 00:00:17.016
+with a kind of a little
+marker on all the corners.
+
+00:00:17.017 --> 00:00:18.412
+And if you're
+designing something
+
+00:00:18.433 --> 00:00:19.519
+like a piece
+of furniture,
+
+00:00:19.520 --> 00:00:22.455
+that's really not ideal,
+so let's go under Window
+
+00:00:22.456 --> 00:00:26.392
+Styles and I'll
+select the...
+
+00:00:26.393 --> 00:00:28.027
+the Engineering
+style.
+
+00:00:28.028 --> 00:00:31.497
+And that takes away the horizon
+and it makes the lines
+
+00:00:31.498 --> 00:00:34.167
+nice and thin,
+which is ideal.
+
+00:00:34.168 --> 00:00:37.470
+Next thing we
+want to do is
+
+00:00:37.471 --> 00:00:40.973
+change the units. By default,
+SketchUp likes to be
+
+00:00:40.974 --> 00:00:44.911
+in inches, I've already changed
+this over to be in metric.
+
+00:00:44.912 --> 00:00:48.514
+So I want to be in Decimal and I
+like to design in Centimeters.
+
+00:00:48.515 --> 00:00:53.457
+And I'll set the precision
+to be 0.1 centimeters.
+
+00:00:53.520 --> 00:00:55.955
+And Length Snapping of .1
+centimeter, 1 millimeter,
+
+00:00:55.956 --> 00:00:57.723
+that works out
+very well.
+
+00:00:57.724 --> 00:00:59.959
+So, it's really important
+that you set your units
+
+00:00:59.960 --> 00:01:03.162
+especially metric versus
+imperial before you get started,
+
+00:01:03.163 --> 00:01:06.232
+because if you switch
+between metric and imperial
+
+00:01:06.233 --> 00:01:08.000
+after you start a drawing,
+nothing works out to a
+
+00:01:08.001 --> 00:01:10.136
+nice and
+round unit.
+
+00:01:10.137 --> 00:01:12.205
+OK, now that we're
+done setting up,
+
+00:01:12.206 --> 00:01:14.073
+we have Susan here.
+
+00:01:14.074 --> 00:01:17.944
+She's part of the default
+set-up when you start SketchUp.
+
+00:01:17.945 --> 00:01:20.012
+She's kind of shallow. She's
+really just a silhouette but
+
+00:01:20.013 --> 00:01:21.747
+she's always
+facing us.
+
+00:01:21.748 --> 00:01:23.983
+It's good to keep her around
+while you're getting started
+
+00:01:23.984 --> 00:01:27.153
+because she gives you a
+nice sense of perspective.
+
+00:01:27.154 --> 00:01:30.723
+So, I'm gonna start my
+table by drawing a leg.
+
+00:01:30.724 --> 00:01:36.095
+And I want that leg to be 4.5
+by 4.5 centimeters so...
+
+00:01:36.096 --> 00:01:38.883
+I'm gonna draw,
+just a rectangle.
+
+00:01:38.932 --> 00:01:41.000
+And you'll notice in
+the bottom right,
+
+00:01:41.001 --> 00:01:43.302
+that the dimensions
+are displayed.
+
+00:01:43.303 --> 00:01:46.506
+So, I'm going to click
+on here and then
+
+00:01:46.507 --> 00:01:53.112
+enter 4.5, 4.5 that means I
+want the rectangle to be
+
+00:01:53.113 --> 00:01:55.548
+4.5 by 4.5
+centimeters.
+
+00:01:55.549 --> 00:01:57.517
+When I push enter,
+
+00:01:57.518 --> 00:01:59.986
+the rectangle
+becomes that size.
+
+00:01:59.987 --> 00:02:02.121
+So, let's zoom in
+on that a bit.
+
+00:02:02.122 --> 00:02:03.411
+So, basically
+there's our
+
+00:02:03.432 --> 00:02:05.358
+rectangle. Now to
+create a solid,
+
+00:02:05.559 --> 00:02:07.960
+we use the
+push/pull tool
+
+00:02:07.961 --> 00:02:10.463
+or extrude tool as other
+people may call it.
+
+00:02:10.464 --> 00:02:14.233
+And I'm gonna turn this
+and extrude it into
+
+00:02:14.234 --> 00:02:18.104
+a solid shape, and I
+want that shape...
+
+00:02:18.105 --> 00:02:20.306
+I want that leg to be
+70 centimeters long.
+
+00:02:20.307 --> 00:02:22.408
+Now notice again on
+the bottom right
+
+00:02:22.409 --> 00:02:26.746
+it shows how long it currently
+is and if I type in 70,
+
+00:02:26.747 --> 00:02:30.550
+that becomes exactly
+70 centimeters long.
+
+00:02:30.551 --> 00:02:33.619
+So, there's
+our table leg
+
+00:02:33.620 --> 00:02:38.191
+Now I want to draw some
+apron rails for this table.
+
+00:02:38.192 --> 00:02:41.961
+So, I'm going to again
+draw a rectangle.
+
+00:02:41.962 --> 00:02:46.265
+And let's draw this. And I
+want that apron rail to be
+
+00:02:46.266 --> 00:02:50.824
+1.9 thick by about 8
+centimeters wide.
+
+00:02:51.872 --> 00:02:53.706
+So, we're close to that
+on the bottom right,
+
+00:02:53.707 --> 00:02:57.966
+but I'll enter
+that as 8, 1.9.
+
+00:02:58.512 --> 00:03:00.580
+And now let's
+extrude that out,
+
+00:03:00.581 --> 00:03:04.083
+and I want that 60
+centimeters long.
+
+00:03:04.084 --> 00:03:08.154
+Now, you'll notice that this
+has just become one shape,
+
+00:03:08.155 --> 00:03:12.465
+in fact it's impossible for
+me to move this part here.
+
+00:03:12.526 --> 00:03:15.595
+I can't even move this thing
+because it's, kind of, stuck
+
+00:03:15.596 --> 00:03:18.931
+to the leg. So, this
+is our next thing,
+
+00:03:18.932 --> 00:03:22.268
+we need objects. So, I'm gonna
+hit backspace a few times,
+
+00:03:22.269 --> 00:03:24.704
+to undo what
+I've just done.
+
+00:03:24.705 --> 00:03:28.207
+And I'm gonna turn this
+leg into an object,
+
+00:03:28.208 --> 00:03:31.143
+so that the next thing that I
+draw doesn't become stuck to it.
+
+00:03:31.144 --> 00:03:33.713
+So, I'll
+triple-click on it.
+
+00:03:33.714 --> 00:03:36.282
+And then I'll
+select this tool.
+
+00:03:36.283 --> 00:03:38.602
+And I'll call
+that Table Leg.
+
+00:03:40.354 --> 00:03:43.122
+So this is now
+an object.
+
+00:03:43.123 --> 00:03:44.761
+And if I want to
+edit this thing,
+
+00:03:44.782 --> 00:03:46.158
+I have to
+double-click on it
+
+00:03:46.159 --> 00:03:48.995
+to open it and now I
+can do things to it.
+
+00:03:48.996 --> 00:03:51.931
+But I'm gonna leave this
+leg as it is for now.
+
+00:03:51.932 --> 00:03:55.635
+So now, once again, let's
+draw our apron rail.
+
+00:03:55.636 --> 00:03:58.504
+And I can draw this
+on the face here.
+
+00:03:58.505 --> 00:04:02.808
+And I'm gonna draw
+this at 8, 1.9.
+
+00:04:02.809 --> 00:04:05.824
+And I'll extrude that
+out 60 centimeters.
+
+00:04:07.714 --> 00:04:10.532
+So there's our
+apron rail.
+
+00:04:11.151 --> 00:04:14.179
+Now let's make
+that an object.
+
+00:04:14.555 --> 00:04:16.622
+So, triple-click on it
+to select all that.
+
+00:04:16.623 --> 00:04:19.125
+Notice that it doesn't select
+the leg, because the leg
+
+00:04:19.126 --> 00:04:20.626
+is in it's
+own object.
+
+00:04:20.627 --> 00:04:23.996
+And the triple-click doesn't
+select things into the object.
+
+00:04:23.997 --> 00:04:26.766
+So, create an
+object of that.
+
+00:04:26.767 --> 00:04:29.202
+So, there's our
+apron rail.
+
+00:04:29.203 --> 00:04:32.405
+And now let's
+take that leg,
+
+00:04:32.406 --> 00:04:36.142
+and make a copy of it. And I'm
+holding down Control as I
+
+00:04:36.143 --> 00:04:38.878
+drag this along, and
+you'll notice the line
+
+00:04:38.879 --> 00:04:41.280
+that I'm dragging
+along is red.
+
+00:04:41.281 --> 00:04:44.150
+Basically, if I'm dragging along
+an axis and it snaps to that,
+
+00:04:44.151 --> 00:04:45.852
+here's along the
+green axis.
+
+00:04:45.853 --> 00:04:48.921
+Here's along
+the red axis.
+
+00:04:48.922 --> 00:04:52.291
+That will drag it along the
+axis nice and parallel.
+
+00:04:52.292 --> 00:04:54.794
+So, now I've got
+two legs here.
+
+00:04:54.795 --> 00:04:57.730
+Now, the apron rail doesn't
+look very good if it's just
+
+00:04:57.731 --> 00:05:01.234
+flush with the table leg. So,
+I'm gonna take this apron rail,
+
+00:05:01.235 --> 00:05:04.470
+I'll select the Move
+tool, and I will move it
+
+00:05:04.471 --> 00:05:08.174
+in a little bit. And because
+I like to keep things nice
+
+00:05:08.175 --> 00:05:11.277
+and known dimensions, I want
+that half a centimeter.
+
+00:05:11.278 --> 00:05:14.747
+So, if you'd watch on the
+bottom right, I can drag that
+
+00:05:14.748 --> 00:05:18.900
+to .5 centimeters. It's a
+bit tricky to do that.
+
+00:05:18.919 --> 00:05:21.620
+It's easier to just punch
+in the number that I want.
+
+00:05:22.623 --> 00:05:24.757
+So now we
+have two legs
+
+00:05:24.758 --> 00:05:29.328
+for our table. So, now let's
+create another apron rail.
+
+00:05:29.329 --> 00:05:32.398
+Now we've already got
+this apron rail here.
+
+00:05:32.399 --> 00:05:35.535
+And I just need to
+rotate that around
+
+00:05:35.536 --> 00:05:37.470
+to get one on
+this side.
+
+00:05:37.471 --> 00:05:41.007
+So, let's rotate
+that apron rail.
+
+00:05:41.008 --> 00:05:43.309
+So, I'm gonna select
+the apron rail.
+
+00:05:43.310 --> 00:05:46.145
+And select the
+rotate tool.
+
+00:05:46.146 --> 00:05:48.447
+And I'm just gonna
+put...go on this face.
+
+00:05:48.448 --> 00:05:51.517
+Now I notice this
+circle is blue.
+
+00:05:51.518 --> 00:05:54.654
+And that's because we're
+rotating about the blue axis.
+
+00:05:54.655 --> 00:05:56.522
+And I'll
+rotate...Oops.
+
+00:05:56.523 --> 00:05:58.486
+OK, now I've just
+rotated that but
+
+00:05:58.507 --> 00:06:00.393
+I actually wanted
+to make a copy.
+
+00:06:00.394 --> 00:06:02.828
+So undo that.
+
+00:06:02.829 --> 00:06:06.699
+And now I'm gonna hit control
+and again rotate that,
+
+00:06:06.700 --> 00:06:09.035
+and now I'm
+copying.
+
+00:06:09.036 --> 00:06:12.972
+Now that rail is not exactly
+where we want it to be.
+
+00:06:12.973 --> 00:06:16.609
+So let's use the move tool and
+I'll take to the corner of it.
+
+00:06:16.610 --> 00:06:20.112
+And now drag that
+to the corner...
+
+00:06:20.113 --> 00:06:23.249
+here. And it's snapped
+to that corner
+
+00:06:23.250 --> 00:06:26.018
+And now let's move it in
+by half a centimeter.
+
+00:06:26.019 --> 00:06:28.754
+And I'm just gonna
+enter that, .5.
+
+00:06:28.755 --> 00:06:32.124
+And there is our
+second apron rail.
+
+00:06:32.125 --> 00:06:35.761
+Now, let's
+take the legs,
+
+00:06:35.762 --> 00:06:37.964
+an apron rail that
+we've already got,
+
+00:06:37.965 --> 00:06:40.533
+and we need to
+copy that over
+
+00:06:40.534 --> 00:06:42.401
+to create the next
+pair of legs, so...
+
+00:06:42.402 --> 00:06:45.137
+I'll use this
+Move tool,
+
+00:06:45.138 --> 00:06:51.110
+I'll hit Control,
+and I'll move it.
+
+00:06:51.111 --> 00:06:54.480
+And there's our
+next set of rails.
+
+00:06:54.481 --> 00:06:58.184
+Now, you'll notice that the
+apron rail is on the inside.
+
+00:06:58.185 --> 00:07:00.486
+I could just
+move that.
+
+00:07:00.487 --> 00:07:03.923
+But I actually want to
+flip this whole thing
+
+00:07:03.924 --> 00:07:05.992
+so that when I go on
+and do the joinery,
+
+00:07:05.993 --> 00:07:09.228
+the orientation is correct.
+So, I'm gonna
+
+00:07:09.229 --> 00:07:11.297
+right-click
+on this,
+
+00:07:11.298 --> 00:07:15.001
+flip long and I'm gonna
+do the green direction.
+
+00:07:15.002 --> 00:07:17.737
+So there we go.
+
+00:07:17.738 --> 00:07:21.941
+And now let's take
+this apron rail,
+
+00:07:21.942 --> 00:07:24.143
+and again
+
+00:07:24.144 --> 00:07:28.147
+Control Drag,
+to move it.
+
+00:07:28.148 --> 00:07:31.584
+Zooming in here, put
+if flush, and now
+
+00:07:31.585 --> 00:07:37.429
+.5 centimeters, and there
+we have our apron rails.
+
+00:07:37.991 --> 00:07:41.794
+And Susan is standing right
+in the middle of our table.
+
+00:07:41.795 --> 00:07:43.729
+We now have a pretty
+good sense of scale,
+
+00:07:43.730 --> 00:07:46.599
+for this little table here so we
+really don't need Susan anymore,
+
+00:07:46.600 --> 00:07:51.437
+so let's select Susan
+and delete her.
+
+00:07:51.438 --> 00:07:54.307
+So, now we need a
+top for our table.
+
+00:07:54.308 --> 00:07:57.009
+Do I'm gonna
+select the
+
+00:07:57.010 --> 00:08:02.148
+square rectangle tool
+and I'm gonna draw
+
+00:08:02.149 --> 00:08:06.085
+a rectangle or a square
+right on top of the table.
+
+00:08:06.086 --> 00:08:11.457
+And now we have essentially
+just a 2-dimensional surface.
+
+00:08:11.458 --> 00:08:13.893
+So, let's
+select this,
+
+00:08:13.894 --> 00:08:15.767
+use the push/pull
+tool and I want
+
+00:08:15.788 --> 00:08:17.530
+that to be 2
+centimeters thick.
+
+00:08:17.531 --> 00:08:21.234
+So I'm gonna drag
+this, pull it off,
+
+00:08:21.235 --> 00:08:23.903
+and I'm gonna enter
+2 centimeters.
+
+00:08:23.904 --> 00:08:26.472
+And there is
+the table top.
+
+00:08:26.473 --> 00:08:29.208
+Now that really doesn't
+look very good.
+
+00:08:29.209 --> 00:08:31.344
+I actually want
+that table top
+
+00:08:31.345 --> 00:08:34.080
+to overhang the edges a
+little bit, so I'm gonna
+
+00:08:34.081 --> 00:08:37.717
+select this edge here and
+again use the push/pull tool.
+
+00:08:37.718 --> 00:08:40.419
+I'm gonna drag it out
+by 5 centimeters.
+
+00:08:40.420 --> 00:08:43.289
+I'm just gonna enter that.
+And I'll do that
+
+00:08:43.290 --> 00:08:48.327
+on every side. And
+drag that out.
+
+00:08:48.328 --> 00:08:51.197
+5 centimeters. Now an
+interesting thing is
+
+00:08:51.198 --> 00:08:53.232
+if we have nothing
+selected,
+
+00:08:53.233 --> 00:08:55.601
+and we select the
+push/pull tool,
+
+00:08:55.602 --> 00:08:57.503
+it will apply to whatever
+we have the mouse on top.
+
+00:08:57.504 --> 00:09:00.273
+So I can just do
+this, 5 centimeters,
+
+00:09:00.274 --> 00:09:02.542
+and then move around, I don't
+have to do separate select
+
+00:09:02.543 --> 00:09:05.978
+I can just again, go
+here and 5 centimeters.
+
+00:09:05.979 --> 00:09:09.048
+And there we have
+
+00:09:09.049 --> 00:09:12.618
+a nice little
+card table.
+
+00:09:12.619 --> 00:09:16.322
+In the next video,I'm
+gonna do some joinery
+
+00:09:16.323 --> 00:09:18.824
+to actually do the joints
+that connect this thing,
+
+00:09:18.825 --> 00:09:20.901
+and embellish the
+table a little bit.
+

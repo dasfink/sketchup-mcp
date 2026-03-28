@@ -1,0 +1,621 @@
+WEBVTT
+Kind: captions
+Language: en-CA
+
+00:00:00.267 --> 00:00:03.002
+So people sometimes ask is
+how do you add those tabs
+
+00:00:03.003 --> 00:00:06.072
+which show different parts of
+a drawing that I have in all
+
+00:00:06.073 --> 00:00:09.809
+my plans. So, in this video,
+I'll show you how to do that
+
+00:00:09.810 --> 00:00:12.126
+using Scenes
+and Layers.
+
+00:00:12.179 --> 00:00:15.310
+So let's open the table that I
+have to run previous tutorials.
+
+00:00:18.252 --> 00:00:21.554
+And so now to add those scene
+tabs we go into a window
+
+00:00:21.555 --> 00:00:26.692
+and then Scenes. And let's add
+some scenes to this one.
+
+00:00:26.693 --> 00:00:30.563
+Let's add 1 scene and
+we'll call that one Main.
+
+00:00:30.564 --> 00:00:32.899
+And you'll notice the tab has
+appeared as soon as I added
+
+00:00:32.900 --> 00:00:34.461
+the scene. And
+let's add a second
+
+00:00:34.482 --> 00:00:35.701
+scene. We'll
+call that one
+
+00:00:35.702 --> 00:00:36.782
+Assembly.
+
+00:00:40.274 --> 00:00:43.041
+So, right now, those 2 scenes
+are actually identical.
+
+00:00:43.610 --> 00:00:46.212
+So, let's change the
+view on 1 of these.
+
+00:00:46.213 --> 00:00:48.414
+And I'll update
+the assembly one.
+
+00:00:48.415 --> 00:00:50.139
+And now if I click
+on Main, you'll
+
+00:00:50.160 --> 00:00:51.617
+notice it
+transitions over to
+
+00:00:51.618 --> 00:00:53.486
+what the Main scene
+looked like.
+
+00:00:53.487 --> 00:00:55.354
+Now that transition
+takes 2 seconds.
+
+00:00:55.355 --> 00:00:57.690
+Sketch-Up likes to
+do these animations.
+
+00:00:57.691 --> 00:01:00.726
+I find them a bit annoying
+so let's modify that.
+
+00:01:00.727 --> 00:01:04.096
+So let's go into Model info and
+then under animation, it's set
+
+00:01:04.097 --> 00:01:07.994
+to take 2 seconds so, let's
+make those take half a second.
+
+00:01:08.535 --> 00:01:11.938
+So we don't have
+to wait as long.
+
+00:01:11.939 --> 00:01:14.941
+So, now in the assembly view,
+I want to show how this
+
+00:01:14.942 --> 00:01:18.711
+goes together. So, I don't
+want to have the top visible.
+
+00:01:18.712 --> 00:01:22.648
+And let's pull
+this joint apart.
+
+00:01:22.649 --> 00:01:25.384
+So now, let's update that one.
+Although that doesn't actually
+
+00:01:25.385 --> 00:01:27.220
+do anything because
+what I've now done is I
+
+00:01:27.221 --> 00:01:31.791
+actually changed the model.
+So, if I go back to Main
+
+00:01:31.792 --> 00:01:34.327
+you'll see we actually have
+the same thing and it's
+
+00:01:34.328 --> 00:01:36.596
+modified. So, we don't
+really want that.
+
+00:01:36.597 --> 00:01:39.832
+So, I'm gonna hit Undo
+a couple of times.
+
+00:01:39.833 --> 00:01:42.702
+And what we want to do
+is, we want to create
+
+00:01:42.703 --> 00:01:45.605
+a separate copy of this table
+that we're gonna modify.
+
+00:01:45.606 --> 00:01:48.241
+So I'm gonna take
+this whole table,
+
+00:01:48.242 --> 00:01:52.745
+and I'm going to copy it,
+just by doing a shift + drag
+
+00:01:52.746 --> 00:01:57.250
+And I'm gonna make it
+move 150 centimeters
+
+00:01:57.251 --> 00:01:58.652
+this way.
+
+00:02:00.821 --> 00:02:03.322
+So, I enter that down here. I
+couldn't put the cursor on it
+
+00:02:03.323 --> 00:02:05.458
+because that would
+move the table.
+
+00:02:05.459 --> 00:02:08.628
+So now let's go into
+the Assembly view.
+
+00:02:08.629 --> 00:02:11.030
+And this is what most people
+will do, is they will
+
+00:02:11.031 --> 00:02:13.332
+put these tables
+far enough apart
+
+00:02:13.333 --> 00:02:15.368
+that you can't see the other
+one. So, imagine this was
+
+00:02:15.369 --> 00:02:18.938
+several meters away, so
+let's update that view.
+
+00:02:18.939 --> 00:02:21.374
+And now I can take this
+table and, for instance,
+
+00:02:21.375 --> 00:02:22.943
+I'll delete
+the top.
+
+00:02:23.377 --> 00:02:26.445
+And so here we're focusing
+on this one. And here
+
+00:02:26.446 --> 00:02:29.882
+we've got the other one.
+Now, personally, I don't
+
+00:02:29.883 --> 00:02:32.818
+like to put these really far
+apart because the drawing
+
+00:02:32.819 --> 00:02:35.588
+can get really confusing.
+So, this is where the next
+
+00:02:35.589 --> 00:02:37.323
+part comes in so,
+
+00:02:37.324 --> 00:02:41.488
+let's pop-up the layers.
+Window, Layers.
+
+00:02:42.095 --> 00:02:45.798
+And I'm gonna add 2 layers here.
+There's already a
+
+00:02:45.799 --> 00:02:48.534
+Layer0, which is the always
+visible default layer.
+
+00:02:48.535 --> 00:02:52.672
+So, I need 2 more layers.
+And I'll call one Main
+
+00:02:52.673 --> 00:02:55.919
+just like my Views. And I
+call the other one Assembly.
+
+00:02:58.745 --> 00:03:02.849
+So, let's take the
+modified table
+
+00:03:02.850 --> 00:03:05.918
+and we'll put that one
+into the Assembly layer so
+
+00:03:05.919 --> 00:03:08.287
+we'll right-click on
+here, Entity Info.
+
+00:03:08.288 --> 00:03:10.122
+And because we've got all
+these pieces selected,
+
+00:03:10.123 --> 00:03:12.693
+I'm just gonna make that
+one part of Assembly.
+
+00:03:13.493 --> 00:03:16.662
+And I'm gonna select the first
+one. And I'll make that one
+
+00:03:16.663 --> 00:03:21.628
+Main. So now these 2 are
+actually in separate layers.
+
+00:03:21.668 --> 00:03:23.803
+And I can turn these
+on and off by
+
+00:03:23.804 --> 00:03:25.538
+turning on and
+off the layers.
+
+00:03:25.539 --> 00:03:27.974
+So, in the
+Assembly view,
+
+00:03:27.975 --> 00:03:31.711
+I want to only see the Assembly
+version and I'll uncheck
+
+00:03:31.712 --> 00:03:34.714
+the main one. And which layers
+are visible is actually
+
+00:03:34.715 --> 00:03:38.084
+part of the scene. So, I'll
+update the scene here.
+
+00:03:38.085 --> 00:03:41.153
+And let's go back into Main.
+And in the Main scene, I
+
+00:03:41.154 --> 00:03:44.090
+don't want to see the Assembly.
+And let's also
+
+00:03:44.091 --> 00:03:45.364
+update that.
+
+00:03:45.859 --> 00:03:48.227
+So now we can flip
+between those 2.
+
+00:03:48.228 --> 00:03:51.230
+Now the one thing I don't like
+is how these things, kind
+
+00:03:51.231 --> 00:03:53.699
+of, flip back and forth. I
+would actually like these
+
+00:03:53.700 --> 00:03:56.569
+to actually appear to be
+part of the same table.
+
+00:03:56.570 --> 00:04:00.573
+So, I'm gonna take the table
+in the Assembly view,
+
+00:04:00.574 --> 00:04:03.476
+which you remember I
+moved that by 1.5 meters
+
+00:04:03.477 --> 00:04:07.590
+to the right, 150 centimeters
+so, I'm gonna move it back.
+
+00:04:08.916 --> 00:04:12.618
+And let's click on Assembly
+and now we need to change
+
+00:04:12.619 --> 00:04:15.988
+our viewpoint. So, I'm
+just gonna drag this over
+
+00:04:15.989 --> 00:04:18.090
+so that we're, once again,
+looking at where we actually
+
+00:04:18.091 --> 00:04:22.528
+put the table. And I'll update
+that. So, now if I click on
+
+00:04:22.529 --> 00:04:25.965
+Main, you'll notice the table
+appears to be the same
+
+00:04:25.966 --> 00:04:28.267
+one, it's just the
+top pops off.
+
+00:04:28.268 --> 00:04:31.103
+And now, because these
+things are actually separate
+
+00:04:31.104 --> 00:04:34.607
+objects, I can take this
+table and I'll turn it to
+
+00:04:34.608 --> 00:04:37.677
+a bit more of an Assembly view.
+So, let's tear apart
+
+00:04:37.678 --> 00:04:42.322
+this joint here. And let's
+also tear this joint apart.
+
+00:04:46.553 --> 00:04:51.083
+And let's focus in on how
+this joint goes together.
+
+00:04:51.992 --> 00:04:55.494
+And we'll update the drawing.
+And if I now go back
+
+00:04:55.495 --> 00:05:01.167
+to Main, you'll see as I flip
+through here it's very clear
+
+00:05:01.168 --> 00:05:04.136
+that what we're looking at is,
+in fact, this leg in the back
+
+00:05:04.137 --> 00:05:05.236
+here.
+
+00:05:06.640 --> 00:05:09.375
+Now the next thing we typically
+want to do with drawing
+
+00:05:09.376 --> 00:05:12.645
+is we want to add some
+labels and dimensions.
+
+00:05:12.646 --> 00:05:15.748
+So, let's start by adding a
+label, and I just have to click
+
+00:05:15.749 --> 00:05:18.985
+on here to get the label tool.
+If you don't have
+
+00:05:18.986 --> 00:05:22.388
+that toolbar selected, you
+can find that under Tools
+
+00:05:22.389 --> 00:05:26.160
+Text. So, let's call
+this a table leg.
+
+00:05:28.095 --> 00:05:30.763
+And now if we go
+to the other view,
+
+00:05:30.764 --> 00:05:32.648
+that label is not
+visible because
+
+00:05:32.669 --> 00:05:34.033
+that's actually
+attached
+
+00:05:34.034 --> 00:05:37.970
+to this table leg that's part
+of this particular view only.
+
+00:05:37.971 --> 00:05:41.040
+But if I now add a
+dimension here,
+
+00:05:41.041 --> 00:05:43.109
+so by clicking
+on here,
+
+00:05:43.110 --> 00:05:45.244
+or if you don't have the
+toolbar visible, you go under
+
+00:05:45.245 --> 00:05:47.313
+Tools, Dimension
+
+00:05:47.314 --> 00:05:50.116
+and let's add a
+dimension on here,
+
+00:05:50.117 --> 00:05:52.451
+showing how big
+this leg is.
+
+00:05:52.452 --> 00:05:55.688
+Now the catch with that
+one is, if I go to Main,
+
+00:05:55.689 --> 00:05:58.391
+you'll notice this dimension
+is still visible in here and
+
+00:05:58.392 --> 00:06:00.059
+we really don't
+want that.
+
+00:06:00.060 --> 00:06:02.628
+And the reason is, when we
+just drew this dimension,
+
+00:06:02.629 --> 00:06:05.064
+it gets drawn into
+the default layer.
+
+00:06:05.065 --> 00:06:07.867
+So I can go in
+here and I can
+
+00:06:07.868 --> 00:06:10.770
+put this into the
+Assembly layer
+
+00:06:10.771 --> 00:06:12.905
+and now, just like everything
+else that's in the
+
+00:06:12.906 --> 00:06:15.942
+Assembly layer, it's not
+visible in the Main view.
+
+00:06:15.943 --> 00:06:18.344
+But, if I want to draw a lot
+of these, its easier to just
+
+00:06:18.345 --> 00:06:21.380
+select the current layer
+as the Assembly layer,
+
+00:06:21.381 --> 00:06:24.183
+and now if I add
+more dimensions,
+
+00:06:24.184 --> 00:06:28.387
+these all get placed
+into the Assembly layer.
+
+00:06:28.388 --> 00:06:31.524
+So, now if I
+go into Main.
+
+00:06:31.525 --> 00:06:35.761
+they're not visible. But this is
+a bit of a tricky sort of thing
+
+00:06:35.762 --> 00:06:39.065
+because, depending on which
+layer we have selected,
+
+00:06:39.066 --> 00:06:42.502
+sometimes if you
+draw things,
+
+00:06:42.503 --> 00:06:44.437
+it can get very
+confusing.
+
+00:06:44.438 --> 00:06:47.006
+Let me show you a pitfall of
+this so, let's open this part
+
+00:06:47.007 --> 00:06:48.019
+here.
+
+00:06:50.711 --> 00:06:54.614
+And I'm gonna delete this and
+I'm gonna select Assembly
+
+00:06:54.615 --> 00:06:58.684
+and I'm going to redraw
+this face and let's pretend
+
+00:06:58.685 --> 00:07:01.387
+that I didn't remember that
+I'm in the Assembly layer.
+
+00:07:01.388 --> 00:07:04.090
+So, there's our
+complete piece.
+
+00:07:04.091 --> 00:07:07.159
+And now let's go
+back to Main.
+
+00:07:07.160 --> 00:07:08.861
+And let's close
+all the objects.
+
+00:07:08.862 --> 00:07:12.164
+And see now if we're in
+here, in the Main view,
+
+00:07:12.165 --> 00:07:14.367
+this part has a
+side missing.
+
+00:07:14.368 --> 00:07:16.502
+But as soon as we go
+in the Assembly view,
+
+00:07:16.503 --> 00:07:18.738
+it doesn't have it missing,
+because this object
+
+00:07:18.739 --> 00:07:21.807
+here. Let's go
+into Entity Info.
+
+00:07:21.808 --> 00:07:24.710
+This particular face is
+part of the Assembly view.
+
+00:07:24.711 --> 00:07:27.079
+And this here is
+part of layer0.
+
+00:07:27.080 --> 00:07:29.949
+So, in general, when drawing
+objects it's best to draw
+
+00:07:29.950 --> 00:07:31.884
+everything
+is layer0.
+
+00:07:31.885 --> 00:07:34.120
+We can fix that if we've
+got everything as part of
+
+00:07:34.121 --> 00:07:36.689
+whatever else. So, I'm just
+gonna triple-click on here.
+
+00:07:36.690 --> 00:07:39.125
+And select everything
+to be part of
+
+00:07:39.126 --> 00:07:43.896
+layer0 and that
+fixes that problem.
+
+00:07:43.897 --> 00:07:48.267
+So that's how to add
+labels and dimensions
+
+00:07:48.268 --> 00:07:52.705
+and deal with the whole
+multiple scene issue.
+
+00:07:52.706 --> 00:07:54.774
+And I'll talk a little bit
+more about layers and
+
+00:07:54.775 --> 00:07:56.642
+object behavior in my
+next video, because
+
+00:07:56.643 --> 00:07:59.142
+that's actually a kind
+of a complicated topic.
+
