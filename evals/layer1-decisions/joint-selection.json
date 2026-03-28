@@ -39,6 +39,7 @@
     "expected": {
       "joint_type": "pocket_screw",
       "dimensions": {"screw_length": "1-1/4\"", "thread": "fine (hardwood/poplar)"},
+      "bail_out": "If you don't have a Kreg jig, a butt joint with 2\" trim screws (pre-drilled and countersunk) works for a painted face frame. Glue both faces before screwing. The screws are filled and hidden under paint.",
       "notes": "Pocket screws are ideal for face frames, especially paint-grade. Drill pocket holes in the rails, screw into the stiles. Fill the holes with plugs or filler before painting. Fast and strong enough for face frame duty."
     },
     "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}

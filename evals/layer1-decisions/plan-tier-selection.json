@@ -1,0 +1,122 @@
+[
+  {
+    "id": "tier-001",
+    "category": "plan-tier",
+    "prompt": "I want to build a simple garage shelf from 2x4s and plywood to store bins and boxes. Nothing fancy. What plan tier is appropriate?",
+    "expected": {
+      "tier": "Tier 1",
+      "notes": "Simple garage shelf is utility-grade. Butt joints with screws or pocket screws. No decorative joinery needed. Plywood shelves on a 2x4 frame. Tier 0 tools (drill, circular saw) are sufficient. Tier 1 plan complexity — basic cut list, simple assembly sequence."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "tier-002",
+    "category": "plan-tier",
+    "prompt": "I want to build a painted bookshelf for my living room. Plywood sides, dado-captured shelves, face frame, base molding. What plan tier?",
+    "expected": {
+      "tier": "Tier 2",
+      "notes": "Painted bookshelf with dados and face frame is a standard Flat-Pack archetype. Requires router or table saw for dados and rabbets. Face frame adds a trim layer. Base molding adds a detail. Multiple joint types (dado, rabbet, pocket screw for face frame). Tier 2 plan — detailed cut list, dado layout, face frame dimensions, assembly order."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "paint"}
+  },
+  {
+    "id": "tier-003",
+    "category": "plan-tier",
+    "prompt": "I want to build a dining table from walnut. Solid wood top, tapered legs, mortise and tenon joinery, oil finish. What plan tier?",
+    "expected": {
+      "tier": "Tier 2",
+      "notes": "Dining table in walnut is a Frame & Panel archetype. M&T joinery requires Tier 2 tools (router + table saw). Tapered legs add a milling step. Oil finish demands tight joints and clean surfaces. Tier 2 plan — M&T dimensions, taper layout, top attachment method (buttons/Z-clips), grain direction notes."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "natural"}
+  },
+  {
+    "id": "tier-004",
+    "category": "plan-tier",
+    "prompt": "I want to build a modular loft bed with storage stairs, a desk module underneath, and bolt-together connections so it can be disassembled for moving. What plan tier?",
+    "expected": {
+      "tier": "Tier 3",
+      "notes": "Modular loft bed is the Modular/Knockdown archetype — the most complex plan tier. Multiple sub-assemblies (loft module, stair module, desk module), each potentially a different archetype internally. Bolt-and-barrel-nut connections between modules require precise alignment. Drilling templates needed. Assembly sequence must be documented. Safety-critical structure (sleeping loft). Tier 3 plan — per-module cut lists, drilling templates, assembly sequence, hardware schedule, safety verification."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "paint"}
+  },
+  {
+    "id": "tier-005",
+    "category": "plan-tier",
+    "prompt": "I want to build a simple cedar planter box for my patio. About 24\" long, 12\" wide, 12\" tall. What plan tier?",
+    "expected": {
+      "tier": "Tier 1",
+      "notes": "Simple planter box is Outdoor/Structural archetype at its simplest. Four sides plus a bottom with drainage holes. Butt joints with exterior screws. Cedar for rot resistance. No complex joinery needed. Tier 1 plan — basic cut list, screw layout, drainage hole locations."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "outdoor"}
+  },
+  {
+    "id": "tier-006",
+    "category": "plan-tier",
+    "prompt": "I want to build floor-to-ceiling built-in cabinets for my office, with adjustable shelves, drawers, and doors. They need to look professional — stain-grade maple plywood with solid maple face frames. What plan tier?",
+    "expected": {
+      "tier": "Tier 3",
+      "notes": "Built-in cabinets are multiple Flat-Pack carcasses combined, with drawers (Box archetype nested inside). Stain-grade finish raises the bar for joint quality. Multiple cabinet boxes must be level, plumb, and scribed to the walls. Drawer slides, door hinges, adjustable shelves all add hardware complexity. Face frames must be flush and aligned across multiple cabinet boxes. Tier 3 plan — cabinet layout, individual box cut lists, face frame dimensions, door/drawer sizing, hardware schedules, scribe fitting instructions."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_2", "finish": "stain"}
+  },
+  {
+    "id": "tier-007",
+    "category": "plan-tier",
+    "prompt": "I want to build an outdoor workbench from construction lumber (2x4s, 2x6s). Half-lap joints for the stretchers, lag screws for the legs. What plan tier?",
+    "expected": {
+      "tier": "Tier 2",
+      "notes": "Outdoor workbench is a Frame & Panel / Outdoor hybrid archetype. Half-lap joints require a table saw or router. Lag screws are straightforward. Construction lumber is forgiving. Tier 2 plan — cut list, half-lap layout, lag screw locations, height adjustment for user's elbow height."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "outdoor"}
+  },
+  {
+    "id": "tier-008",
+    "category": "plan-tier",
+    "prompt": "I want to build a storage shed with multiple sections — a garden tool area, a potting bench section, and a bicycle storage bay. What plan tier?",
+    "expected": {
+      "tier": "Tier 3",
+      "notes": "A multi-section shed is an Outdoor/Structural project with significant complexity. Multiple framed sections, possibly different roof lines, door framing, foundation/floor framing, and weather sealing all contribute. Equivalent to a small building project. Tier 3 plan — framing layout, foundation plan, roof plan, section details, door/window framing, material take-off, assembly sequence."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_2", "finish": "outdoor"}
+  },
+  {
+    "id": "tier-009",
+    "category": "plan-tier",
+    "prompt": "I want to build a pocket-screw bookshelf from pine, painted white. No dados, no fancy joinery. Fixed shelves with pocket screws and a plywood back. What plan tier?",
+    "expected": {
+      "tier": "Tier 1",
+      "notes": "Pocket-screw bookshelf is the simplest version of the Flat-Pack archetype. All Tier 0 tools. No routing or table saw work. Pocket screws for structure, nails for the back panel. Paint covers everything. Tier 1 plan — basic cut list, pocket screw locations, back panel dimensions, painting tips."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "tier-010",
+    "category": "plan-tier",
+    "prompt": "I want to build a jewelry box with dovetail corners, a hinged lid, and velvet-lined compartments. Cherry wood with an oil finish. What plan tier?",
+    "expected": {
+      "tier": "Tier 2",
+      "notes": "Jewelry box is the Box/Drawer archetype. Dovetails require Tier 3 tools or advanced hand skills but the plan itself is Tier 2 complexity — small number of parts, one joint type for corners, groove for the bottom, hinge for the lid. The challenge is precision at small scale, not plan complexity. Tier 2 plan — dovetail layout, groove dimensions for bottom panel, hinge mortise, interior compartment divider layout."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_3", "finish": "natural"}
+  },
+  {
+    "id": "tier-011",
+    "category": "plan-tier",
+    "prompt": "I want to build a coffee table with a lower shelf. Oak, stained, with simple square legs and aprons. Mortise and tenon joinery. What plan tier?",
+    "expected": {
+      "tier": "Tier 2",
+      "notes": "Coffee table is a Frame & Panel archetype. M&T joinery requires Tier 2 tools. Lower shelf adds a stretcher layer. Stained oak is standard. Tier 2 plan — leg dimensions, apron dimensions, M&T layout, shelf support method, top attachment (buttons or Z-clips), finish schedule."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "stain"}
+  },
+  {
+    "id": "tier-012",
+    "category": "plan-tier",
+    "prompt": "I want to build an Adirondack chair from cedar for my back yard. What plan tier?",
+    "expected": {
+      "tier": "Tier 2",
+      "notes": "Adirondack chair combines Chair/Complex Angles with Outdoor/Structural archetypes. Angled back, curved seat slats, and splayed legs add moderate complexity. Bolt-through or carriage-bolt connections are standard. Cedar for rot resistance. Tier 2 plan — pattern templates for curved parts, angle specifications, hardware list, assembly sequence."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "outdoor"}
+  }
+]

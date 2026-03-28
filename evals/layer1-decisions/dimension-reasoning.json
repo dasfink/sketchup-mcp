@@ -1,0 +1,176 @@
+[
+  {
+    "id": "dim-001",
+    "category": "dimensions",
+    "prompt": "I'm cutting a mortise and tenon to join a 3/4\" thick rail into a 1-1/2\" square leg. What should the tenon dimensions be?",
+    "expected": {
+      "dimensions": {
+        "tenon_thickness": "1/4\" (1/3 of the rail thickness, or match to 1/4\" mortise chisel)",
+        "tenon_width": "rail width minus 1/4\" (leave 1/8\" shoulders top and bottom)",
+        "tenon_length": "1\" minimum (2/3 to 3/4 of the 1-1/2\" leg width)",
+        "mortise_depth": "1\" + 1/16\" glue room"
+      },
+      "notes": "Tenon thickness is 1/3 of the thinner board (rail). For a 3/4\" rail, tenon is 1/4\" thick, centered in the rail with 1/4\" shoulders on each face. Tenon length should be at least 1\" to get sufficient glue surface in a 1-1/2\" leg. Leave 1/16\" extra mortise depth for glue room."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2"}
+  },
+  {
+    "id": "dim-002",
+    "category": "dimensions",
+    "prompt": "I'm cutting a dado in 3/4\" plywood sides to house a shelf made from standard 3/4\" Home Depot plywood. How wide should the dado be?",
+    "expected": {
+      "dimensions": {
+        "width": "23/32\" (0.719\"), NOT 3/4\"",
+        "depth": "1/4\" to 3/8\""
+      },
+      "notes": "CRITICAL: Standard 3/4\" plywood from big-box stores actually measures approximately 23/32\" (0.719\"). If you cut a 3/4\" dado, the shelf will be loose and rattle. Always measure actual plywood thickness with calipers before cutting. Set your dado stack or router bit to match the measured thickness. Test on scrap first."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1"}
+  },
+  {
+    "id": "dim-003",
+    "category": "dimensions",
+    "prompt": "I'm cutting a dado to house a shelf made from 3/4\" Baltic birch plywood. Same question — how wide?",
+    "expected": {
+      "dimensions": {
+        "width": "3/4\" (0.750\") — true thickness",
+        "depth": "1/4\" to 3/8\""
+      },
+      "notes": "Baltic birch plywood is a true 3/4\" (0.750\"). Unlike standard big-box plywood which measures 23/32\", Baltic birch is manufactured to metric standards and comes out to true fractional-inch equivalents. A 3/4\" dado is correct here. Still measure with calipers to confirm — trust but verify."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1"}
+  },
+  {
+    "id": "dim-004",
+    "category": "dimensions",
+    "prompt": "How deep should I cut a dado in 3/4\" solid wood stock for a fixed shelf?",
+    "expected": {
+      "dimensions": {
+        "depth": "1/4\" to 3/8\"",
+        "standard": "3/8\" is the most common"
+      },
+      "notes": "Dado depth in 3/4\" stock should be 1/4\" to 3/8\". The 1/3 rule (1/4\") is conservative and better for softwood. 3/8\" (half the thickness) is standard for hardwood. Going deeper than 3/8\" weakens the side panel. For softwood (pine), stay at 1/4\". For hardwood (oak, maple), 3/8\" is fine."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1"}
+  },
+  {
+    "id": "dim-005",
+    "category": "dimensions",
+    "prompt": "What angle should I cut my dovetails at if I'm working with Eastern white pine?",
+    "expected": {
+      "dimensions": {
+        "angle": "1:6 ratio, approximately 9.5 degrees"
+      },
+      "notes": "Softwood dovetails use a steeper angle — 1:6 ratio (approximately 9.5 degrees). The wider tail angle gives more material to resist forces in the softer wood. Pine is very soft (Janka hardness 380 lbf), so the wider angle is important for joint integrity. Some sources also cite 1:5 (about 11 degrees) for very soft species."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_3"}
+  },
+  {
+    "id": "dim-006",
+    "category": "dimensions",
+    "prompt": "What angle should I cut my dovetails at for a walnut jewelry box?",
+    "expected": {
+      "dimensions": {
+        "angle": "1:8 ratio, approximately 7 degrees"
+      },
+      "notes": "Hardwood dovetails use a shallower angle — 1:8 ratio (approximately 7 degrees). The narrower tails look more refined and elegant. Walnut (Janka 1,010) is strong enough to hold the narrower geometry. Some makers use 1:7 (about 8 degrees) for a slightly more visible tail. Either 1:7 or 1:8 is correct for hardwood."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_3"}
+  },
+  {
+    "id": "dim-007",
+    "category": "dimensions",
+    "prompt": "I'm cutting a mortise in a 1-1/2\" square table leg for a 3/4\" thick apron that is 4\" wide. How deep should the mortise be?",
+    "expected": {
+      "dimensions": {
+        "mortise_depth": "at least 1\" (2/3 to 3/4 of the leg width)",
+        "tenon_length": "15/16\" (mortise depth minus 1/16\" glue room)",
+        "mortise_width": "1/4\" to 1/2\" (1/3 of rail thickness)"
+      },
+      "notes": "Mortise depth should be 2/3 to 3/4 of the mortise board's width. For a 1-1/2\" leg, that's 1\" to 1-1/8\". At least 1\" is the minimum for adequate strength. The tenon should be slightly shorter than the mortise depth (subtract 1/16\") to leave room for glue to pool at the bottom."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2"}
+  },
+  {
+    "id": "dim-008",
+    "category": "dimensions",
+    "prompt": "I'm using pocket screws to join 3/4\" thick boards. What screw length and thread type should I use?",
+    "expected": {
+      "dimensions": {
+        "screw_length": "1-1/4\"",
+        "thread_type": "Fine thread for hardwood, coarse thread for softwood and plywood",
+        "drill_depth_setting": "3/4\""
+      },
+      "notes": "For 3/4\" stock, use 1-1/4\" pocket screws. Set the Kreg jig depth stop to 3/4\". Fine-thread screws for hardwoods (oak, maple, walnut, poplar) — they resist stripping. Coarse-thread for softwoods (pine, SPF, cedar) and plywood — they bite better in softer material. Pocket hole spacing: 6-8\" on center for panels, one per joint for frames."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0"}
+  },
+  {
+    "id": "dim-009",
+    "category": "dimensions",
+    "prompt": "I want to add adjustable shelf pin holes to my bookcase sides. What spacing and diameter should the holes be?",
+    "expected": {
+      "dimensions": {
+        "hole_diameter": "1/4\" (standard) or 5mm (metric)",
+        "spacing": "1-1/4\" apart (or 32mm system)",
+        "depth": "1/2\" (do not drill through)",
+        "setback_from_edge": "1-1/2\" to 2\" from front and back edges"
+      },
+      "notes": "Two common systems: Imperial uses 1/4\" holes spaced 1-1/4\" apart. European 32mm system uses 5mm holes spaced 32mm apart. Both work. Use a shelf pin drilling jig for consistent spacing — misaligned holes cause shelves to tilt. Drill depth is 1/2\" — use a depth stop or tape on the drill bit to prevent drilling through the side panel."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0"}
+  },
+  {
+    "id": "dim-010",
+    "category": "dimensions",
+    "prompt": "I'm cutting a rabbet to house a 1/4\" plywood back panel in my bookcase. The sides are 3/4\" thick. What should the rabbet dimensions be?",
+    "expected": {
+      "dimensions": {
+        "rabbet_width": "1/4\" (match back panel thickness)",
+        "rabbet_depth": "3/8\""
+      },
+      "notes": "The rabbet width matches the back panel thickness — typically 1/4\" for standard hardboard or plywood back panels. The rabbet depth of 3/8\" provides a good lip to register the panel and leaves 3/8\" of material on the side panel. The back panel sits in the rabbet and is secured with pin nails or staples. The back panel is structural — it squares the carcass."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1"}
+  },
+  {
+    "id": "dim-011",
+    "category": "dimensions",
+    "prompt": "I'm building a half-lap joint for 2x4 stretchers on a workbench. How deep and wide should the notch be?",
+    "expected": {
+      "dimensions": {
+        "notch_depth": "3/4\" (exactly half of 1-1/2\" actual thickness)",
+        "notch_width": "3-1/2\" (actual width of the mating 2x4)"
+      },
+      "notes": "Half-lap notch depth is always exactly half the stock thickness. For a 2x4 (actual 1-1/2\" thick), the notch depth is 3/4\" in each board. Notch width matches the actual width of the mating board (3-1/2\" for a 2x4). This ensures the boards sit flush when assembled. Measure the actual boards — nominal and actual sizes differ."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2"}
+  },
+  {
+    "id": "dim-012",
+    "category": "dimensions",
+    "prompt": "I'm using 1-1/2\" thick stock for table legs and aprons. What pocket screw length do I need?",
+    "expected": {
+      "dimensions": {
+        "screw_length": "2-1/2\"",
+        "drill_depth_setting": "1-1/2\""
+      },
+      "notes": "For 1-1/2\" stock, use 2-1/2\" pocket screws. Set the jig depth stop to 1-1/2\". The screw must be long enough to pass through the pocket-drilled board and bite into the mating board. Use coarse thread for softwood (pine, SPF) and fine thread for hardwood."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0"}
+  },
+  {
+    "id": "dim-013",
+    "category": "dimensions",
+    "prompt": "I need to cut a groove in drawer sides to capture the 1/4\" plywood bottom panel. What dimensions for the groove?",
+    "expected": {
+      "dimensions": {
+        "groove_width": "1/4\" (match bottom panel actual thickness)",
+        "groove_depth": "1/4\"",
+        "position": "1/4\" up from the bottom edge of the drawer side"
+      },
+      "notes": "Standard drawer bottom groove is 1/4\" wide by 1/4\" deep, positioned 1/4\" up from the bottom edge. This places the groove entirely within the lower part of the drawer side. The bottom panel slides into the grooves in all four sides (front, back, and both sides). Cut the groove before assembly. If using Baltic birch 1/4\" plywood, measure actual thickness — it may be 6mm (0.236\")."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2"}
+  }
+]

@@ -1,0 +1,186 @@
+[
+  {
+    "id": "mtf-001",
+    "category": "material-tool-finish",
+    "prompt": "I'm building an indoor bookshelf that will be painted white. What material should I use and what joints are appropriate?",
+    "expected": {
+      "material": "Pine, SPF, or poplar for solid wood; birch plywood for panels",
+      "joints": "Pocket screws for face frames, dados for shelves (if router available), butt+screw at Tier 0",
+      "notes": "Paint-grade projects are ideal for softwood and pocket screws. Pine and SPF are inexpensive and paint beautifully. Poplar is excellent (stable, machines cleanly). Hardwood is overkill — you're paying for grain character that paint covers. Cabinet-grade birch plywood is perfect for painted casework."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "mtf-002",
+    "category": "material-tool-finish",
+    "prompt": "I'm building an outdoor bench frame for my patio. It will sit on a covered concrete slab. What material and joints should I use?",
+    "expected": {
+      "material": "Western red cedar for visible surfaces, or pressure-treated pine for budget. Red-toned 2x stock (SYP) if in the southern US.",
+      "joints": "Half-lap for stretchers, carriage bolts for legs, deck screws for slats. Mechanical fasteners preferred over glue.",
+      "notes": "Outdoor furniture needs rot-resistant material and mechanical fasteners. Cedar is naturally rot-resistant and weathers to silver-gray. PT pine works for structure but looks industrial. Use stainless steel or ACQ-compatible coated fasteners — standard galvanized corrodes in contact with cedar and PT lumber. Space slats 1/8\"-1/4\" for drainage."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "outdoor"}
+  },
+  {
+    "id": "mtf-003",
+    "category": "material-tool-finish",
+    "prompt": "I'm building a dresser that will be stained medium-dark. I want to use pocket screws for the case but I'm worried about the holes showing. What should I do?",
+    "expected": {
+      "material": "Red oak or poplar for the carcass (oak for visible parts, poplar for hidden internal structure)",
+      "joints": "Pocket screws are problematic for stain-grade. Use dados for shelves and dividers, rabbet for back panel. If pocket screws must be used, plug with face-grain plugs cut from the same board.",
+      "notes": "Stain-grade work changes the pocket screw equation. Wood filler does NOT take stain evenly — it always shows as a different color. Pocket hole plugs must be face-grain plugs cut from the same board stock, oriented with the grain, and sanded flush. Even then, they're visible up close. Better to use hidden joinery (dados, rabbets) or decorative joints (finger joints, dovetails) on stain-grade work."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "stain"}
+  },
+  {
+    "id": "mtf-004",
+    "category": "material-tool-finish",
+    "prompt": "I'm a complete beginner. I only have a circular saw, a drill, and some clamps. No pocket hole jig, no router. What joints can I actually make?",
+    "expected": {
+      "joints": "Butt joint + screws only. Possibly a crude rabbet with the circular saw and a fence.",
+      "bail_out": "Add a Kreg pocket hole jig (~$50) to dramatically expand joint options. It's the single most impactful tool purchase at Tier 0.",
+      "notes": "With just a circular saw and drill, you're limited to butt joints with screws. Pre-drill everything to prevent splitting. Use construction screws (not drywall screws). A back panel (nailed or screwed flush) provides racking resistance. This is the Ana White minimum setup. Adding a pocket hole jig for $50 unlocks the most beginner-friendly structural joint."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "mtf-005",
+    "category": "material-tool-finish",
+    "prompt": "How should I attach a solid walnut tabletop to the apron frame? The top is 30\" wide.",
+    "expected": {
+      "method": "Tabletop buttons or Z-clips. NOT glue, NOT rigid screws across grain.",
+      "notes": "A 30\" wide solid walnut top will expand and contract approximately 1/8\" to 3/16\" seasonally across its width. The attachment method MUST allow this cross-grain movement. Tabletop buttons slot into a groove cut in the inner face of the apron and screw to the underside of the top. Z-clips do the same without a groove. Elongated screw holes in the apron (oval, oriented cross-grain) also work. NEVER glue a solid-wood top to the apron — it will crack."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "natural"}
+  },
+  {
+    "id": "mtf-006",
+    "category": "material-tool-finish",
+    "prompt": "What material should I use for drawer sides? I'm building kitchen drawers.",
+    "expected": {
+      "material": "1/2\" Baltic birch plywood or 1/2\" poplar. NOT softwood.",
+      "notes": "Drawer sides need to be stable, consistent, and hold fasteners well. 1/2\" Baltic birch is the professional standard — void-free, dimensionally stable, and the exposed plywood edge is attractive. 1/2\" poplar is the solid-wood alternative — stable, machines cleanly, and affordable. Avoid softwood (pine, SPF) for drawer sides — it's too soft, dents easily, and drawer slides don't grip well in soft material."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "stain"}
+  },
+  {
+    "id": "mtf-007",
+    "category": "material-tool-finish",
+    "prompt": "I'm using pocket screws on a painted bookshelf. How should I handle the pocket holes?",
+    "expected": {
+      "method": "Fill with wood filler or pocket hole plugs, sand flush, prime, and paint.",
+      "notes": "For painted projects, pocket holes are easy to hide. Option 1: Fill with wood filler (overfill slightly — it shrinks), sand flush after drying, prime, and paint. Option 2: Insert Kreg pocket hole plugs, glue in place, sand flush. Both methods disappear under paint. Always orient pocket holes toward hidden faces (back of face frame, underside of shelves) so only a few need filling."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "mtf-008",
+    "category": "material-tool-finish",
+    "prompt": "I'm using pocket screws on a stained oak bookshelf. Same question — how to handle the holes?",
+    "expected": {
+      "method": "Use face-grain wood plugs cut from the same oak board, glued in and sanded flush. Wood filler is NOT acceptable for stain-grade.",
+      "notes": "Stain-grade pocket holes require face-grain plugs cut from the SAME board stock using a plug cutter. Orient the plug grain to match the surrounding wood. Glue in place, let dry, trim flush with a chisel, then sand. Even with plugs, the repair is often visible — the end grain of the plug absorbs stain differently. Best practice: avoid exposed pocket holes on stain-grade work entirely. Use hidden joinery or orient all pockets toward hidden faces."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "stain"}
+  },
+  {
+    "id": "mtf-009",
+    "category": "material-tool-finish",
+    "prompt": "I'm building a cedar privacy fence. What fasteners should I use? Nails or screws?",
+    "expected": {
+      "fasteners": "Outdoor-rated screws (stainless steel or ACQ-compatible coated), NOT nails. Pilot holes required.",
+      "notes": "Screws are preferred over nails for cedar fences — they resist pull-out from wood movement and wind loads. Standard galvanized nails corrode in contact with cedar's tannins, causing black staining and weakening. Use stainless steel or coated screws rated for cedar/PT lumber. Always pre-drill pilot holes — cedar is soft and splits easily near edges and ends. Ring-shank nails are acceptable if screws aren't feasible, but smooth nails back out over time."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "outdoor"}
+  },
+  {
+    "id": "mtf-010",
+    "category": "material-tool-finish",
+    "prompt": "I want to build a workbench top. What material should I use?",
+    "expected": {
+      "material": "Laminated 2x4s (face-laminated) or 3/4\" MDF. Both are excellent workbench top options.",
+      "notes": "Laminated 2x4s: Rip straight 2x4s, glue and clamp face-to-face to build up a thick, heavy, flat slab. Very durable, replaceable if damaged, and the end grain pattern looks good. 3/4\" MDF: Perfectly flat, cheap, and replaceable. Dings and dents are expected on a workbench — MDF lets you replace the top cheaply. Double-layer MDF (two sheets glued together = 1-1/2\" thick) is common. Avoid plywood for a workbench top — the veneer face chips and peels under abuse."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "natural"}
+  },
+  {
+    "id": "mtf-011",
+    "category": "material-tool-finish",
+    "prompt": "I'm building a painted plywood bookcase. The plywood edges are visible on the shelves. How should I treat the edges?",
+    "expected": {
+      "method": "Fill the edge grain with wood filler or joint compound, sand smooth, prime, and paint.",
+      "notes": "For painted plywood, the simplest edge treatment is fill-and-sand. Apply wood filler or a skim coat of joint compound to the plywood edge, let dry, sand smooth with 150 grit, prime, and paint. Multiple thin coats of filler may be needed to fill voids. Alternatively, iron-on veneer edge banding covers the edge before painting. For a more durable edge, glue a thin solid wood strip (1/4\" x 3/4\") to the front edge."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "mtf-012",
+    "category": "material-tool-finish",
+    "prompt": "I'm building a stained red oak plywood bookcase. The shelf edges are visible. How should I treat them?",
+    "expected": {
+      "method": "Veneer-matched iron-on edge banding (red oak veneer tape), or solid red oak edge strips.",
+      "notes": "For stain-grade plywood, the edge must be covered with matching wood — filler will NOT take stain evenly and will show. Iron-on red oak veneer edge banding is the easiest method: apply with a household iron, trim flush with a trimmer or chisel. For higher quality, glue solid red oak strips (1/4\" x 3/4\") to the edge — they can be routed with a profile (roundover, chamfer) and will stain identically to the plywood veneer face."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_1", "finish": "stain"}
+  },
+  {
+    "id": "mtf-013",
+    "category": "material-tool-finish",
+    "prompt": "I want to build a dining table from walnut with a natural oil finish. It will seat 6. What material should I use and what are the key considerations?",
+    "expected": {
+      "material": "Black walnut — 8/4 (2\" rough) stock milled to final thickness for legs, 4/4 (1\" rough) for the top, edge-glued into a panel",
+      "notes": "Walnut is the right choice for an oil-finished table — the rich brown color needs minimal enhancement. Use Danish oil, tung oil, or a wiping varnish. Sand progressively to 220 grit, raise the grain, then apply oil. Key considerations: the top must float on the apron frame (buttons or Z-clips), joints must be tight because oil finish shows every gap, and walnut is expensive so plan cuts carefully to minimize waste. Buy rough lumber and mill it yourself to save cost (requires Tier 3 tools: jointer + planer)."
+    },
+    "context": {"skill_level": "advanced", "tools": "tier_3", "finish": "natural"}
+  },
+  {
+    "id": "mtf-014",
+    "category": "material-tool-finish",
+    "prompt": "I'm a beginner building a simple painted nightstand. I have pine from the big-box store. Should I use a pre-stain conditioner before painting?",
+    "expected": {
+      "answer": "No. Pre-stain conditioner is for STAIN, not paint. For paint, use primer.",
+      "notes": "Pre-stain conditioner controls stain absorption in blotch-prone woods like pine. It's not needed for paint. For painted pine: fill knots and holes with wood filler, sand smooth, apply a stain-blocking primer (Zinsser BIN or Kilz Original — essential for knotty pine to prevent bleed-through), then paint with 3-4 thin coats. Sand lightly between paint coats with 220 grit."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "mtf-015",
+    "category": "material-tool-finish",
+    "prompt": "I want to stain a pine bookshelf. Any special steps I should know about?",
+    "expected": {
+      "steps": "1. Test on scrap. 2. Apply pre-stain conditioner. 3. Apply stain. 4. Apply polyurethane topcoat.",
+      "notes": "Pine is notoriously blotchy when stained — the soft earlywood absorbs stain much faster than the denser latewood, creating an uneven, mottled appearance. A pre-stain conditioner (applied per manufacturer timing) is mandatory. Even with conditioner, test your stain on a scrap piece of the SAME boards you'll use — stain color varies wildly by the individual board. Apply stain with consistent wipe timing for even color. Always add a polyurethane topcoat — stain alone has zero durability."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "stain"}
+  },
+  {
+    "id": "mtf-016",
+    "category": "material-tool-finish",
+    "prompt": "I want to build a painted bookshelf but I'm debating between pine and walnut. Which should I pick?",
+    "expected": {
+      "material": "Pine (or poplar). Walnut is a waste for a painted project.",
+      "notes": "Never recommend walnut for a painted project. Walnut costs $8-15/BF while pine costs $2-4/BF. Paint completely hides the grain and color that make walnut special. Pine and poplar are ideal for paint — they're inexpensive, widely available, and paint beautifully. Poplar is actually the professional's choice for painted furniture: dimensionally stable, machines cleanly, and takes paint well. Using walnut under paint is like putting a bumper sticker on a Ferrari."
+    },
+    "context": {"skill_level": "beginner", "tools": "tier_0", "finish": "paint"}
+  },
+  {
+    "id": "mtf-017",
+    "category": "material-tool-finish",
+    "prompt": "I want to build a bookshelf with an oil finish to show off the wood grain. I have a budget of about $200 for lumber. What species should I use?",
+    "expected": {
+      "material": "Red oak — best value for oil-finished furniture",
+      "notes": "For an oil finish on a budget, red oak is the best choice. It's widely available, moderately priced ($4-7/BF), and has a pronounced open grain that looks beautiful under oil. The grain pattern is a feature, not a flaw. Walnut and cherry are more expensive and would blow a $200 lumber budget for a full bookshelf. Oak takes stain predictably if you want to warm the color before oiling. Avoid pine for oil finish — oil amplifies grain character but pine still looks like pine, and it's soft enough to dent easily on a bookshelf."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "natural"}
+  },
+  {
+    "id": "mtf-018",
+    "category": "material-tool-finish",
+    "prompt": "I'm building Baltic birch plywood drawers and the edges will be visible. Should I apply edge banding?",
+    "expected": {
+      "method": "No edge banding needed. Baltic birch edges can be left exposed.",
+      "notes": "Baltic birch is the exception to the 'always band plywood edges' rule. The all-birch veneer core with no voids produces clean, attractive edges. Sand the edges to 220 grit, apply finish (oil, poly, or paint), and leave them visible. This is a common design choice in modern and Scandinavian furniture. The layered edge pattern is considered a design feature."
+    },
+    "context": {"skill_level": "intermediate", "tools": "tier_2", "finish": "natural"}
+  }
+]
