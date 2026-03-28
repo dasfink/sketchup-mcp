@@ -198,14 +198,9 @@ def get_sketchup_connection():
     
     if _sketchup_connection is not None:
         try:
-            # Test connection with a ping command
-            ping_request = {
-                "jsonrpc": "2.0",
-                "method": "ping",
-                "params": {},
-                "id": 0
-            }
-            _sketchup_connection.sock.sendall(json.dumps(ping_request).encode('utf-8') + b'\n')
+            # Test connection with a zero-byte send (socket-level liveness check)
+            _sketchup_connection.sock.settimeout(0.1)
+            _sketchup_connection.sock.send(b'')
             return _sketchup_connection
         except Exception as e:
             logger.warning(f"Existing connection is no longer valid: {str(e)}")
@@ -248,7 +243,7 @@ async def server_lifespan(server: FastMCP) -> AsyncIterator[Dict[str, Any]]:
 # Create MCP server with lifespan support
 mcp = FastMCP(
     "SketchupMCP",
-    description="Sketchup integration through the Model Context Protocol",
+    instructions="Sketchup integration through the Model Context Protocol",
     lifespan=server_lifespan
 )
 

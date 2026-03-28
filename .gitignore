@@ -33,3 +33,4 @@ ENV/
 ._*
 Thumbs.db
 *.tar.gz
+.superpowers/
