@@ -13,12 +13,25 @@ Design and produce build-ready plans for furniture using SketchUp via MCP (`eval
 Claude Code → stdio → sketchup-mcp (Python) → TCP :9876 → SketchUp Ruby Extension
 ```
 
+## Before Starting Any Design
+
+Check these BEFORE modeling (see `references/materials-and-tools.md`):
+1. **What tools does the builder have?** → Constrains joint selection
+2. **What's the finish?** → Affects joint visibility and material choice
+3. **Indoor or outdoor?** → Affects species, joints, and fasteners
+4. **Project archetype?** → Sets defaults (see `references/project-archetypes.md`)
+
+Then select plan tier (see `references/plan-tiers.md`):
+- Simple shelf/box → Tier 1
+- Furniture → Tier 2
+- Complex/modular → Tier 3
+
 ## Design Phases
 
-1. **Concept** — Block out volumes with `MCP_Helpers.make_box`. Get proportions right first.
-2. **Detail** — Real lumber dimensions. Convert Groups → Components. Apply materials + tags.
-3. **Joinery** — Dados, bolt holes, mortises. **Always verify bounds after every pushpull.**
-4. **Shop Drawings** — Scenes for Layout, OpenCutList for cut lists.
+1. **Concept** — Identify archetype, select joints (see `references/joint-selection.md`). Block out volumes with `create_component_box`. Get proportions right first. Use ACTUAL lumber dimensions (not nominal).
+2. **Detail** — Real lumber dimensions. Convert Groups → Components. Apply materials + tags. Follow archetype tag conventions.
+3. **Joinery** — Apply joints per selection guide. Prefer MCP tools (`safe_cut_dado`, `create_mortise_tenon`, etc.) for simple operations; use `WW.*` via `eval_ruby` for complex multi-joint scripts. **Always verify bounds after every operation.**
+4. **Shop Drawings** — Generate plan artifacts per tier. Scenes for Layout, `generate_cutlist` for cut lists. Verify with `verify_scenes`.
 
 ## Critical: The Pushpull Inversion Bug
 
@@ -49,7 +62,41 @@ module MCP_Helpers
 end
 ```
 
-### For dados/holes: Pushpull then VERIFY bounds
+### For dados: Rebuild the definition (preferred)
+
+Instead of pushpull (which inverts ~50% of the time), rebuild the entire component definition with the dado as explicit geometry. A 6-face solid becomes a 10-face solid with the notch:
+
+```ruby
+# Example: 1x6 drawer side (0.75 × 22 × 5.5) with 1/2" dado, 1/4" deep, 1/2" up from bottom
+defn.entities.clear!
+de = defn.entities
+w, d, h = 0.75, 22.0, 5.5
+dado_z1, dado_z2, dado_depth = 0.5, 1.0, 0.25  # 1/2" wide, 1/4" deep
+
+# Bottom, top, outside — full rectangles (unchanged)
+de.add_face([0,0,0],[w,0,0],[w,d,0],[0,d,0])
+de.add_face([0,0,h],[0,d,h],[w,d,h],[w,0,h])
+de.add_face([w,0,0],[w,d,0],[w,d,h],[w,0,h])
+
+# Inside face — split into 2 sub-faces (below dado + above dado)
+de.add_face([0,0,0],[0,d,0],[0,d,dado_z1],[0,0,dado_z1])
+de.add_face([0,0,dado_z2],[0,d,dado_z2],[0,d,h],[0,0,h])
+
+# Dado groove — 3 faces (bottom, top, back wall)
+de.add_face([0,0,dado_z1],[0,d,dado_z1],[dado_depth,d,dado_z1],[dado_depth,0,dado_z1])
+de.add_face([0,0,dado_z2],[dado_depth,0,dado_z2],[dado_depth,d,dado_z2],[0,d,dado_z2])
+de.add_face([dado_depth,0,dado_z1],[dado_depth,d,dado_z1],[dado_depth,d,dado_z2],[dado_depth,0,dado_z2])
+
+# End faces — with dado notch profile
+de.add_face([0,0,0],[w,0,0],[w,0,h],[0,0,h],[0,0,dado_z2],[dado_depth,0,dado_z2],[dado_depth,0,dado_z1],[0,0,dado_z1])
+de.add_face([0,d,0],[0,d,dado_z1],[dado_depth,d,dado_z1],[dado_depth,d,dado_z2],[0,d,dado_z2],[0,d,h],[w,d,h],[w,d,0])
+```
+
+This avoids pushpull entirely. The dado is geometrically exact and visible when zoomed in.
+
+### For dados/holes: Pushpull then VERIFY bounds (fallback)
+
+Only use pushpull when rebuilding the definition is impractical (e.g., complex existing geometry):
 
 ```ruby
 expected_max = 77.0  # record BEFORE cutting
@@ -225,6 +272,85 @@ Update existing: `page.update(1 | 32)` (1=camera, 32=layers).
 | Assembly Stages | Shared perspective | Progressive tag visibility |
 | Exploded | Perspective | Exploded tag only |
 
+## Standard Plywood Sizes (Lowe's)
+
+Designs MUST use standard available sizes. Common mistake: specifying 3/8" plywood — most stores don't stock it in hardwood species.
+
+| Thickness | Actual | Available Species | Typical Use |
+|-----------|--------|-------------------|-------------|
+| 1/4" | 0.25" | Maple, birch, oak, lauan | Back panels, drawer bottoms (light duty) |
+| 1/2" | 0.47-0.50" | Maple, birch, oak | Drawer bottoms (captured in dados), panels |
+| 3/4" | 0.73" | Maple, birch, oak | Cabinet carcasses, structural panels |
+
+**Before specifying plywood in a design, verify the thickness is available in the desired species at the builder's store.**
+
+## Cabinet/Dresser Archetype
+
+Standard construction for face-frame cabinets with drawers — the most common beginner furniture project.
+
+**Structure:**
+- 3/4" plywood sides, top, bottom (the carcass)
+- 1/4" or 1/2" plywood back panel (keeps it square)
+- 1x2 pine face frame (stiles + rails, pocket-holed)
+- Drawer boxes: 1x6 pine sides with dadoed plywood bottoms
+- Overlay drawer fronts (hardwood for contrast)
+
+**Key principles:**
+- Freestanding is simpler than built-in (no mounting to surrounding structure)
+- Side-mount drawer slides need 3/4" plywood or solid wood — 3/8" is too thin for slide screws
+- The back panel is the squaring tool — measure diagonals, nail it when square
+- Overlay fronts hide imprecision in the face frame openings
+- Pocket holes face INSIDE the cabinet (hidden when drawers installed)
+
+**Modeling order:**
+1. Carcass (sides, top, bottom) as shared components
+2. Back panel
+3. Face frame (stiles + rails)
+4. Individual drawer box pieces (sides, front/back, bottom — NOT solid blocks)
+5. Drawer fronts (overlay)
+6. Tags: assign all to "Drawers" or similar
+
+**Cut planning:** Verify all pieces fit on standard 4×8 plywood sheets before finalizing dimensions. Draw the cutting layout.
+
+## Component Detail Level
+
+For shop drawings and exploded views, components must be modeled at the **individual piece level**, not as simplified blocks.
+
+| Wrong | Right |
+|-------|-------|
+| Drawer box as 1 solid block | 4 sides + 1 bottom = 5 components |
+| Face frame as 1 piece | 2 stiles + N rails = N+2 components |
+| Cabinet as 1 box | 2 sides + top + bottom + back = 5 components |
+
+Solid blocks are fine for **concept phase** (blocking out volumes). But before creating shop drawings, exploded views, or cut lists, every piece that gets cut separately must be a separate component.
+
+## Exploded View Technique
+
+Scenes don't capture entity positions. Duplicate all parts to an "Exploded" tag at offset positions:
+
+```ruby
+# Offset strategy by part type
+offsets = {
+  "Side"   => -> (e) { e.bounds.min.x < center_x ? [-spread, 0, 0] : [spread, 0, 0] },
+  "TopBot" => -> (e) { e.bounds.min.z > mid_z ? [0, 0, spread*2] : [0, 0, -spread] },
+  "Back"   => -> (e) { [0, -spread*1.5, 0] },
+  "Front"  => -> (e) { [0, spread*2.5, 0] },
+  "Drawer" => -> (e) { [0, spread*1.5, spread*0.3] },
+  "FF"     => -> (e) { [0, spread*1.5, 0] },  # face frame
+}
+
+parts.each do |e|
+  type = offsets.keys.find { |k| e.definition.name.include?(k) }
+  ox, oy, oz = offsets[type]&.call(e) || [0, 0, 0]
+  new_inst = entities.add_instance(e.definition,
+    Geom::Transformation.new([e.transformation.origin.x + ox, ...]))
+  new_inst.layer = exploded_tag
+  new_inst.material = e.material
+end
+```
+
+Then create a scene showing only the Exploded tag. The assembled view shows the original components (Drawers tag), the exploded view shows the duplicates (Exploded tag).
+
 ## Tags
 
 | Tag | Contents |
@@ -235,6 +361,7 @@ Update existing: `page.update(1 | 32)` (1=camera, 32=layers).
 | Slats, Ledgers | Platform components |
 | Railing | Guard rails, guard posts |
 | Ladder | Ladder + hardware |
+| Drawers | Cabinet/dresser components |
 | Room | Context geometry (hide for shop drawings) |
 | Exploded | Duplicate geometry for exploded view |
 
@@ -255,7 +382,18 @@ Update existing: `page.update(1 | 32)` (1=camera, 32=layers).
 | Definition name collision | Delete/rename old def before creating new |
 | Groups for parts | Components required for cut lists |
 | Joinery before sizing | Finalize dimensions first |
+| Drawer box as solid block | Model individual sides/front/back/bottom for shop drawings |
+| Specifying 3/8" plywood | Not stocked at most stores — use 1/4", 1/2", or 3/4" |
+| 3/8" ply for slide mounting panels | Too thin — slides need 3/4" ply or solid wood |
+| Building into existing structure | Consider freestanding first — simpler, removable, build in garage |
+| Dados via pushpull | Rebuild definition with explicit notch geometry instead |
 
-## Reference
+## References
 
-Ruby API details, helpers (`drill_hole`, `trim_extrusion`), and component/transformation patterns: see `references/sketchup-ruby-api.md`.
+| File | Contents |
+|------|----------|
+| `references/joint-selection.md` | Joint decision framework, lookup tables, anti-patterns, bail-out rules |
+| `references/plan-tiers.md` | Tier 1/2/3 artifact checklists, project-to-tier mapping |
+| `references/materials-and-tools.md` | Lumber sizes, plywood gotchas, tool tiers, species guide |
+| `references/project-archetypes.md` | 6 archetypes with default parts, joints, tags, modeling order |
+| `references/sketchup-ruby-api.md` | Ruby API details, helpers, component/transformation patterns |
