@@ -128,7 +128,7 @@
   "mcpServers": {
     "sketchup": {
       "command": "uvx",
-      "args": ["sketchup_mcp"]
+      "args": ["sketchup-mcp"]
     }
   }
 } 

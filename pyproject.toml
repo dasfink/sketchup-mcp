@@ -1,12 +1,13 @@
 [project]
 name = "sketchup-mcp"
-version = "0.2.0"
+version = "1.7.0"
 description = "Sketchup integration through Model Context Protocol"
 readme = "README.md"
 requires-python = ">=3.10"
 license = {text = "MIT"}
 authors = [
-    {name = "Your Name", email = "your.email@example.com"}
+    {name = "mhyrr", email = "grolsen@gmail.com"},
+    {name = "dasfink", email = "misha@plantfortomorrow.com"}
 ]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -18,8 +19,8 @@ dependencies = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/yourusername/sketchup-mcp"
-Issues = "https://github.com/yourusername/sketchup-mcp/issues"
+Homepage = "https://github.com/mishafinkler/sketchup-mcp"
+Issues = "https://github.com/mishafinkler/sketchup-mcp/issues"
 
 [project.scripts]
 sketchup-mcp = "sketchup_mcp.server:main"
